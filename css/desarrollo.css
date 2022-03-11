@@ -11,6 +11,9 @@ body {
   font-family: 'Poppins', sans-serif;
   overflow-y: inherit;
   overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content:center;
 }
 
 .container{
@@ -31,7 +34,7 @@ body {
 .img-mobil{
   display:none;
 }
-.img-dektop:hover{
+.img-desktop:hover{
   filter: drop-shadow(1px 1px 20px rgb(31, 175, 241));
 }
 
@@ -64,7 +67,7 @@ a{
 
 .btn:hover{
   box-shadow: 4px -4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-  scale:1.1;
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {

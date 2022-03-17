@@ -56,6 +56,7 @@ body {
 }
 a{
   text-decoration: none;
+  cursor:pointer;
 }
 .btn{
   color: white;
@@ -63,6 +64,10 @@ a{
   padding:10px 20px;
   border-radius: 10px;
   transition:0.7s;
+  cursor:pointer;
+}
+.lbl-btn{
+  cursor:pointer;
 }
 
 .btn:hover{

@@ -1,14 +1,17 @@
-*{
-  margin:0;
-  box-sizing: border-box;
+* {
+	margin: 0;
+	box-sizing: border-box;
 }
 
-body{
-  background-color: $fondo;
-  height: 100vh;
-  width:100vw;
-  padding:90px  0;
-  font-family: 'Poppins', sans-serif;
-  overflow-y: inherit;
-  overflow-x: hidden;
+body {
+	background-color: $body;
+	height: 100vh;
+	width: 100vw;
+	padding: 90px 0;
+	font-family: 'Poppins', sans-serif;
+	overflow-y: inherit;
+	overflow-x: hidden;
+	&.dark-active{
+		background-color: $dark-body;
+	}
 }

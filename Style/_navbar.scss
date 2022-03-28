@@ -1,62 +1,96 @@
-.header{
-  background-color: $celeste-header;
-  // height: 80px;
-  position: fixed;//posision fija
-  width:100%;
-  top:0;
-  left:0;
-  z-index: 2;
-  svg{
-    display:block;
-  }
-  
-  .nav{
-    display:flex;
-    justify-content: space-between;
-  
-    // max-width: 992px;
+.header {
+	background-color: $header;
+	// height: 80px;
+	position: fixed; //posision fija
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	svg {
+		display: block;
+	}
 
-    .nav-toggle{
-      background:none;
-      border:none;
-      padding:0 20px;
-      display:none;
-      img{
-        height:36px;
-      }
-    }
-    .nav-menu{
-      display:flex;
-      flex-direction: row;
-      margin-right: 40px;
-      list-style: none;
+	.nav {
+		display: flex;
+		justify-content: space-between;
 
-      .nav-menu-item{
-        font-size: 18px;
-        margin: 0 10px;
-        font-weight: 400;
-        line-height: 80px;
-        width:max-content;
+		// max-width: 992px;
 
-        .nav-menu-link{
-        color:black;
-        text-decoration: none;
-        padding:8px 12px;
-          &:hover{
-            color:$hover-letras;
-            font-weight: 600;
-            transition: 0.3s;
-          }
-          
-        }
-          
-      }
-    }
-    
-    .logo{
-      padding:0 40px;
-      display: flex;
-      align-items: center;
-    }
-  }
+		.nav-toggle {
+			background: none;
+			border: none;
+			padding: 0 20px;
+			display: none;
+			img {
+				height: 36px;
+			}
+		}
+		.nav-menu {
+			display: flex;
+			flex-direction: row;
+			margin-right: 0px;
+			list-style: none;
+
+			.nav-menu-item {
+				font-size: 18px;
+				margin: 0 10px;
+				font-weight: 400;
+				line-height: 80px;
+				width: max-content;
+				// background-color: red;
+
+				.nav-menu-link {
+					display: absolute;
+					color: $letras-nrml;
+					text-decoration: none;
+					padding: 8px 12px;
+
+					// background-color: blue;
+					&:hover {
+						color: $bg-seccion;
+						font-weight: 600;
+						transition: 0.3s;
+					}
+
+					.img-moon {
+						padding-top: 1.7rem;
+						position: relative;
+						left: 0px;
+						// display:none;
+						display: inline-block;
+						cursor: pointer;
+					}
+					.img-sun {
+						display: none;
+						// display:inline-block;
+						position: relative;
+						cursor: pointer;
+						left: -45px;
+						padding-top: 1.7rem;
+					}
+
+					&.dark-active {
+						color: $dark-letras-bg-blue;
+					}
+				}
+			}
+		}
+
+		.logo {
+			padding: 0 40px;
+			display: flex;
+			align-items: center;
+
+			&.dark-active {
+				svg {
+					path {
+						fill: $dark-letras-bg-blue;
+					}
+				}
+			}
+		}
+	}
+	&.dark-active {
+		background-color: $dark-header;
+	}
 }

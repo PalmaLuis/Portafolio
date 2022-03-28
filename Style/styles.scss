@@ -1,18 +1,26 @@
-$celeste-header:#E9EFF5;
-$fondo:#F8F9FA;
-$back-menu:#2F2E41;
-$hover-letras: #0466C8;
-$letras: #D8E1E9;
-$subtitle: #83AED4;
-$hover-boton:#043260;
-$cards-hobbis:#C5D5EA;
+// color Pallete normal mode
+$header: #e9eff5;
+$body: #f8f9fa;
+$cards: #c5d5ea;
+$letras-bg-blue: #ffffff;
+$bg-seccion: #0466c8;
+$letras-nrml: #000000;
+$hover-btn: #043260;
+$back-menu: #2f2e41;
+$subtitle: #83aed4;
 
-@import "general";
-@import "navbar";
-@import "cuerpo";
+// collor Pallete dark mode
+$dark-header: #003a77;
+$dark-body: #00172e;
+$dark-cards: #c5d5ea;
+$dark-letras-bg-blue: #ffffff;
+$dark-bg-seccion: #003a77;
+$dark-letras-nrml: #ffffff;
+$dark-hvoer-btn: #043260;
 
+@import 'general';
+@import 'navbar';
+@import 'cuerpo';
 
-@import "media-768";
-
-
-
+// Responsive Design
+@import 'media-768';

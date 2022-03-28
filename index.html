@@ -1,611 +1,1024 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Estilos -->
-    <link rel="stylesheet" href="./css/styles.css" />
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="./images/logo.ico">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Estilos -->
+		<link rel="stylesheet" href="./css/styles.css" />
 
-    <title>Luis Palma</title>
-  </head>
-  <body>
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="shortcut icon" href="./images/logo.ico" />
 
-    <div class="header" >
-      <nav class="nav">
-        <a href="#home" class="logo"><img src="./images/Logo.png" alt=""></a>
-        <button class="nav-toggle" id="nav-toggle"  >
-          <img src="./images/menu-movil-icon.png" alt="">
-        </button>
-        <ul class="nav-menu " id="nav-menu">
-          <li class="nav-menu-item" ><a href="#aboutme" class="nav-menu-link ">About me</a></li>
-          <li class="nav-menu-item" ><a href="#projects" class="nav-menu-link ">Projects</a></li>
-          <li class="nav-menu-item" ><a href="#skill" class="nav-menu-link ">Skills</a></li>
-          <li class="nav-menu-item" ><a href="#contact" class="nav-menu-link ">Contact</a></li>
-        </ul>
-      </nav>
-      <!-- curvas -->
-      <!-- <svg  viewBox="0 0 1363 90" fill="F8F9FA" xmlns="http://www.w3.org/2000/svg">
+		<title>Luis Palma</title>
+	</head>
+	<body id="body">
+		<div class="header" id="header">
+			<nav class="nav">
+				<a href="#home" class="logo" id="logo">
+					<svg
+						width="48"
+						height="48"
+						viewBox="0 0 48 48"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M44.217 38.6137C43.6093 39.5656 42.8982 40.4652 42.0936 41.3005C41.438 41.9815 40.6822 42.5851 39.8453 43.0959C39.0944 43.546 38.2735 43.9014 37.4071 44.1516C35.6984 44.6794 32.7098 44.9433 28.4413 44.9433H24.3968C20.8595 44.9433 18.7244 44.8381 17.9916 44.6275C17.5887 44.5056 17.2244 44.3035 16.928 44.0375C16.6317 43.7715 16.4116 43.449 16.2854 43.0959C16.0039 42.3561 15.8632 41.1591 15.8632 39.505V9.34733C15.8632 6.42697 16.0664 4.61418 16.4727 3.90896C16.7175 3.52031 17.0254 3.16408 17.387 2.85114C17.8278 2.49425 18.3457 2.21635 18.9109 2.03344C19.7072 1.77276 20.5366 1.59555 21.3816 1.50561C22.6242 1.36908 23.8762 1.30692 25.1288 1.31957V0H0V1.31957H2.12342C4.2002 1.31957 5.7657 1.84812 6.81992 2.90522C7.59267 3.67966 7.97905 5.54581 7.97905 8.50367V39.505C7.97905 42.2162 7.69427 43.9591 7.12469 44.7335C6.06715 46.0315 4.40172 46.6804 2.12841 46.6804H0V48H42.938L47.6845 34.9557L46.343 34.7394C45.7227 36.0658 45.0128 37.3595 44.217 38.6137Z"
+							fill="#0466C8"
+						/>
+						<path
+							d="M17.6119 5.28694H19.1108C20.6096 5.28694 21.7513 5.66694 22.5357 6.42696C23.062 6.95912 23.3251 8.30248 23.3251 10.4571V32.773C23.3251 34.7242 23.1203 35.9789 22.7106 36.537C21.9761 37.4802 20.7762 37.951 19.1108 37.9496H17.6119V38.9014H34.6941V37.9496H33.1578C31.6589 37.9496 30.5314 37.5826 29.7753 36.8485C29.2207 36.3394 28.9426 34.9831 28.9409 32.7795V22.7399C31.1493 23.1599 33.4003 23.3888 35.6609 23.4235C37.4366 23.4494 39.2042 23.2116 40.887 22.7204C42.3133 22.3045 43.6272 21.6421 44.7492 20.7735C45.801 19.9389 46.626 18.9127 47.1649 17.7688C47.7333 16.5492 48.0169 15.2441 47.9992 13.9291C48.0087 12.9377 47.8158 11.9528 47.4297 11.0195C47.0589 10.1319 46.5359 9.2976 45.8783 8.54477C45.2219 7.79641 44.4367 7.13979 43.55 6.59786C42.6661 6.05734 41.698 5.62833 40.6747 5.32371C38.5663 4.66609 35.7559 4.33656 32.2435 4.33511H17.6119V5.28694ZM28.9409 6.8834C30.2071 6.61427 31.5024 6.46128 32.8056 6.42696C33.9472 6.41736 35.0803 6.59802 36.1431 6.95912C37.1547 7.30644 38.0681 7.8384 38.8211 8.51881C39.6107 9.24155 40.2233 10.0951 40.6222 11.0282C41.0807 12.1112 41.3043 13.2582 41.2817 14.4115C41.2933 15.4231 41.0918 16.4281 40.6872 17.3773C40.3264 18.2413 39.7749 19.0363 39.0634 19.7179C38.3873 20.353 37.5743 20.8674 36.6702 21.2321C35.7635 21.6 34.7736 21.7884 33.7723 21.7838C33.0819 21.7769 32.3927 21.7321 31.7089 21.6496C30.9178 21.5617 29.9951 21.4283 28.9409 21.2494V6.8834Z"
+							fill="#0466C8"
+						/>
+					</svg>
+				</a>
+				<button class="nav-toggle" id="nav-toggle">
+					<img src="./images/menu-movil-icon.png" alt="" />
+				</button>
+				<ul class="nav-menu" id="nav-menu">
+					<li class="nav-menu-item">
+						<a href="#aboutme" class="nav-menu-link">About me</a>
+					</li>
+					<li class="nav-menu-item">
+						<a href="#projects" class="nav-menu-link">Projects</a>
+					</li>
+					<li class="nav-menu-item">
+						<a href="#skill" class="nav-menu-link">Skills</a>
+					</li>
+					<li class="nav-menu-item">
+						<a href="#contact" class="nav-menu-link">Contact</a>
+					</li>
+					<li class="nav-menu-item">
+						<a class="nav-menu-link">
+							<img class="img-moon" id="img-moon" src="images/moon-btn.png" />
+						</a>
+					</li>
+					<li class="nav-menu-item">
+						<a class="nav-menu-link">
+							<img class="img-sun" id="img-sun" src="images/sun-btn.png" />
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<!-- curvas -->
+			<!-- <svg  viewBox="0 0 1363 90" fill="F8F9FA" xmlns="http://www.w3.org/2000/svg">
       <path d="M124.046 7.62944C91.4633 -9.5368 0 7.62944 0 7.62944V113.5H1364.5V102C1253 85 1191 7.62944 1123.91 7.62944C1024.74 7.62944 959.246 68.3667 849.312 73.0319C714.762 78.7416 619.727 -2.7519 565.207 7.62944C508.631 18.4024 484.678 52.7883 319.617 75.1081C252.008 84.2504 156.557 24.7586 124.046 7.62944Z" fill="#F8F9FA"/>
       </svg> -->
-    </div>
+		</div>
 
-    <div class="first-section-wrapper" id="home">
-      <div class="first-section-left">
-        <img class="img-desktop"src="./images/sobre-compu.png" >
-        <img class="img-mobil"src="./images/sobre-compu-mobil.png">
-      </div>
-      <div class="first-section-rigth">
-        <label for="lbl-name" class="lbl-name">Luis Palma Campos</label>
-        <label for="lbl-desc" class="lbl-desc">Cross-platform software developer with experience in frontend and UI/UX design</label>
-      </div>
-    </div>
-    
-    <div class="container-second" id="aboutme">
-        <svg ViewBox="0 0 1366 154" fill="#F8F9FA" xmlns="http://www.w3.org/2000/svg">
-        <path d="M421 149C324 149 137 107 4.00001 32.5C-3.18349 28.4762 4.00001 1 4.00001 1H1365V148C1365 148 1125 20 985.5 20C814.5 20 652.5 149 421 149Z"/>
-        </svg>
+		<div class="first-section-wrapper" id="home">
+			<div class="first-section-left">
+				<img class="img-desktop" src="./images/sobre-compu.png" />
+			</div>
+			<div class="first-section-rigth" id="first-name">
+				<label for="lbl-name" class="lbl-name">Luis Palma Campos</label>
+				<label for="lbl-desc" class="lbl-desc"
+					>Cross-platform software developer with experience in frontend and
+					UI/UX design</label
+				>
+			</div>
+		</div>
 
-        <div class="second-section-wrapper">
-          <div class="second-section-left">
-            <div class="descrip-wrapper">
-              <label for="lbl-title" class="lbl-title">&gt;&gt;Más acerca de mí _</label>
-              <label for="lbl-subtitle" class="lbl-subtitle">Información sobre mí y mi pasión por la tecnología</label>
-              <label for="lbl-desc" class="lbl-desc">
-                ¡Hola! Me llamo Luis Palma Campos soy desarrollador 
-                de software, enfocado en el desarrollo frontend y 
-                con una pasión oculta por el backend , me gusta aprender 
-                cosas nuevas de forma autodidacta y ponerlas en práctica 
-                desarrollando proyectos que me hacen feliz y amar más aún
-                el mundo de la programación lo cual me impulsa a un 
-                aprendizaje continuo.  
-              </label>
-            </div>
-            
-              <div class="boton-wrapper">
-                <a href="./docs/CV-Luis-Palma-Ing-Sistemas-.pdf" download style="text-decoration: none;">
-                  <button class="btn" >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.5 22.5H8.25C7.8523 22.4996 7.471 22.3414 7.18978 22.0602C6.90856 21.779 6.7504 21.3977 6.75 21V16.5H8.25V21H19.5V4.5H12.75V3H19.5C19.8977 3.0004 20.279 3.15856 20.5602 3.43978C20.8414 3.721 20.9996 4.1023 21 4.5V21C20.9996 21.3977 20.8414 21.779 20.5602 22.0602C20.279 22.3414 19.8977 22.4996 19.5 22.5Z" fill="#0466C8"/>
-                    <path d="M12.75 7.5H18V9H12.75V7.5ZM12 11.25H18V12.75H12V11.25ZM11.25 15H18V16.5H11.25V15ZM6.75 14.25C5.75574 14.249 4.80249 13.8536 4.09945 13.1506C3.3964 12.4475 3.00099 11.4943 3 10.5V2.25H4.5V10.5C4.5 11.0967 4.73705 11.669 5.15901 12.091C5.58097 12.5129 6.15326 12.75 6.75 12.75C7.34674 12.75 7.91903 12.5129 8.34099 12.091C8.76295 11.669 9 11.0967 9 10.5V3.75C9 3.55109 8.92098 3.36032 8.78033 3.21967C8.63968 3.07902 8.44891 3 8.25 3C8.05109 3 7.86032 3.07902 7.71967 3.21967C7.57902 3.36032 7.5 3.55109 7.5 3.75V11.25H6V3.75C6 3.15326 6.23705 2.58097 6.65901 2.15901C7.08097 1.73705 7.65326 1.5 8.25 1.5C8.84674 1.5 9.41903 1.73705 9.84099 2.15901C10.2629 2.58097 10.5 3.15326 10.5 3.75V10.5C10.499 11.4943 10.1036 12.4475 9.40055 13.1506C8.69751 13.8536 7.74426 14.249 6.75 14.25Z" fill="#0466C8"/>
-                    </svg>
-                    Descargar CV
-                  </button>
-                </a>
+		<div class="container-second" id="aboutme">
+			<svg class="curvitas"
+				ViewBox="0 0 1366 154"
+				fill="#F8F9FA"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d="M421 149C324 149 137 107 4.00001 32.5C-3.18349 28.4762 4.00001 1 4.00001 1H1365V148C1365 148 1125 20 985.5 20C814.5 20 652.5 149 421 149Z"
+				/>
+			</svg>
 
-                <a href="https://www.github.com/PalmaLuis" target="_blank" style="text-decoration: none;">
-                  <button class="btn" >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.9906 1.78827C6.19453 1.78593 1.5 6.47811 1.5 12.2695C1.5 16.8492 4.43672 20.7422 8.52656 22.1719C9.07734 22.3101 8.99297 21.9187 8.99297 21.6516V19.8351C5.8125 20.2078 5.68359 18.1031 5.47031 17.7516C5.03906 17.0156 4.01953 16.8281 4.32422 16.4766C5.04844 16.1039 5.78672 16.5703 6.64219 17.8336C7.26094 18.75 8.46797 18.5953 9.07969 18.443C9.21328 17.8922 9.49922 17.4 9.89297 17.018C6.59766 16.4273 5.22422 14.4164 5.22422 12.0258C5.22422 10.8656 5.60625 9.79921 6.35625 8.93905C5.87812 7.52108 6.40078 6.30702 6.47109 6.12655C7.83281 6.00468 9.24844 7.10155 9.35859 7.18827C10.132 6.97968 11.0156 6.86952 12.0047 6.86952C12.9984 6.86952 13.8844 6.98436 14.6648 7.1953C14.9297 6.99374 16.2422 6.05155 17.5078 6.1664C17.5758 6.34686 18.0867 7.5328 17.6367 8.93202C18.3961 9.79452 18.7828 10.8703 18.7828 12.0328C18.7828 14.4281 17.4 16.4414 14.0953 17.0226C14.3784 17.301 14.6031 17.633 14.7564 17.9992C14.9098 18.3654 14.9886 18.7585 14.9883 19.1555V21.7922C15.007 22.0031 14.9883 22.2117 15.3398 22.2117C19.4906 20.8125 22.4789 16.8914 22.4789 12.2719C22.4789 6.47811 17.782 1.78827 11.9906 1.78827V1.78827Z" fill="#0466C8"/>
-                    </svg>
-                    Visitar Github
-                  </button>
-                </a>
-              </div>
+			<div class="second-section-wrapper">
+				<div class="second-section-left">
+					<div class="descrip-wrapper">
+						<label for="lbl-title" class="lbl-title"
+							>&gt;&gt;Más acerca de mí _</label
+						>
+						<label for="lbl-subtitle" class="lbl-subtitle"
+							>Información sobre mí y mi pasión por la tecnología</label
+						>
+						<label for="lbl-desc" class="lbl-desc">
+							¡Hola! Me llamo Luis Palma Campos soy desarrollador de software,
+							enfocado en el desarrollo frontend y con una pasión oculta por el
+							backend , me gusta aprender cosas nuevas de forma autodidacta y
+							ponerlas en práctica desarrollando proyectos que me hacen feliz y
+							amar más aún el mundo de la programación lo cual me impulsa a un
+							aprendizaje continuo.
+						</label>
+					</div>
 
-          </div>
-          <div class="second-section-rigth">
-            <img src="./images/img-second-desktop.png" class="img-desktop">
-            <img src="./images/img-second-mobil.png" class="img-mobil">
-          </div>
-        </div>
+					<div class="boton-wrapper">
+						<a
+							href="./docs/CV-Luis-Palma-Ing-Sistemas-.pdf"
+							download
+							style="text-decoration: none"
+						>
+							<button class="btn">
+								<svg
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M19.5 22.5H8.25C7.8523 22.4996 7.471 22.3414 7.18978 22.0602C6.90856 21.779 6.7504 21.3977 6.75 21V16.5H8.25V21H19.5V4.5H12.75V3H19.5C19.8977 3.0004 20.279 3.15856 20.5602 3.43978C20.8414 3.721 20.9996 4.1023 21 4.5V21C20.9996 21.3977 20.8414 21.779 20.5602 22.0602C20.279 22.3414 19.8977 22.4996 19.5 22.5Z"
+										fill="#0466C8"
+									/>
+									<path
+										d="M12.75 7.5H18V9H12.75V7.5ZM12 11.25H18V12.75H12V11.25ZM11.25 15H18V16.5H11.25V15ZM6.75 14.25C5.75574 14.249 4.80249 13.8536 4.09945 13.1506C3.3964 12.4475 3.00099 11.4943 3 10.5V2.25H4.5V10.5C4.5 11.0967 4.73705 11.669 5.15901 12.091C5.58097 12.5129 6.15326 12.75 6.75 12.75C7.34674 12.75 7.91903 12.5129 8.34099 12.091C8.76295 11.669 9 11.0967 9 10.5V3.75C9 3.55109 8.92098 3.36032 8.78033 3.21967C8.63968 3.07902 8.44891 3 8.25 3C8.05109 3 7.86032 3.07902 7.71967 3.21967C7.57902 3.36032 7.5 3.55109 7.5 3.75V11.25H6V3.75C6 3.15326 6.23705 2.58097 6.65901 2.15901C7.08097 1.73705 7.65326 1.5 8.25 1.5C8.84674 1.5 9.41903 1.73705 9.84099 2.15901C10.2629 2.58097 10.5 3.15326 10.5 3.75V10.5C10.499 11.4943 10.1036 12.4475 9.40055 13.1506C8.69751 13.8536 7.74426 14.249 6.75 14.25Z"
+										fill="#0466C8"
+									/>
+								</svg>
+								Descargar CV
+							</button>
+						</a>
 
-      <svg viewBox="0 0 1368 94" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M115.878 4.53894C25.581 20.67 1 63.8178 1 63.8178V95H1367V81.2774C1367 81.2774 1252 32.1163 1168.85 26.4687C1074.79 20.0806 1025.58 55.3337 931.064 55.9368C820.122 56.6448 768.406 20.7858 657.663 16.1891C558.544 12.0749 504.091 36.6568 404.83 34.6924C295.588 32.5304 206.176 -11.5921 115.878 4.53894Z" fill="#F8F9FA" />
-      </svg>
+						<a
+							href="https://www.github.com/PalmaLuis"
+							target="_blank"
+							style="text-decoration: none"
+						>
+							<button class="btn">
+								<svg
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M11.9906 1.78827C6.19453 1.78593 1.5 6.47811 1.5 12.2695C1.5 16.8492 4.43672 20.7422 8.52656 22.1719C9.07734 22.3101 8.99297 21.9187 8.99297 21.6516V19.8351C5.8125 20.2078 5.68359 18.1031 5.47031 17.7516C5.03906 17.0156 4.01953 16.8281 4.32422 16.4766C5.04844 16.1039 5.78672 16.5703 6.64219 17.8336C7.26094 18.75 8.46797 18.5953 9.07969 18.443C9.21328 17.8922 9.49922 17.4 9.89297 17.018C6.59766 16.4273 5.22422 14.4164 5.22422 12.0258C5.22422 10.8656 5.60625 9.79921 6.35625 8.93905C5.87812 7.52108 6.40078 6.30702 6.47109 6.12655C7.83281 6.00468 9.24844 7.10155 9.35859 7.18827C10.132 6.97968 11.0156 6.86952 12.0047 6.86952C12.9984 6.86952 13.8844 6.98436 14.6648 7.1953C14.9297 6.99374 16.2422 6.05155 17.5078 6.1664C17.5758 6.34686 18.0867 7.5328 17.6367 8.93202C18.3961 9.79452 18.7828 10.8703 18.7828 12.0328C18.7828 14.4281 17.4 16.4414 14.0953 17.0226C14.3784 17.301 14.6031 17.633 14.7564 17.9992C14.9098 18.3654 14.9886 18.7585 14.9883 19.1555V21.7922C15.007 22.0031 14.9883 22.2117 15.3398 22.2117C19.4906 20.8125 22.4789 16.8914 22.4789 12.2719C22.4789 6.47811 17.782 1.78827 11.9906 1.78827V1.78827Z"
+										fill="#0466C8"
+									/>
+								</svg>
+								Visitar Github
+							</button>
+						</a>
+					</div>
+				</div>
+				<div class="second-section-rigth">
+					<img src="./images/img-second-desktop.png" class="img-desktop" />
+					<img src="./images/img-second-mobil.png" class="img-mobil" />
+				</div>
+			</div>
 
+			<svg class="curvitas"viewBox="0 0 1368 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M115.878 4.53894C25.581 20.67 1 63.8178 1 63.8178V95H1367V81.2774C1367 81.2774 1252 32.1163 1168.85 26.4687C1074.79 20.0806 1025.58 55.3337 931.064 55.9368C820.122 56.6448 768.406 20.7858 657.663 16.1891C558.544 12.0749 504.091 36.6568 404.83 34.6924C295.588 32.5304 206.176 -11.5921 115.878 4.53894Z"
+					fill="#F8F9FA"
+				/>
+			</svg>
+		</div>
 
-    </div>
+		<div class="container-third">
+			<div class="third-section">
+				<div class="lbl-wrapper">
+					<label for="lbl-title" class="lbl-title">&gt;&gt;Mis</label>
+					<label for="lbl-title" class="lbl-title2">Hobbies_</label>
+				</div>
+				<div class="hobbis-wrapper">
+					<!-- leer libros -->
+					<a href="./pages" class="tooltip">
+						<div class="hobbie-item">
+							<svg
+								width="48"
+								height="48"
+								viewBox="0 0 48 48"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M4 12C4 12 7 8 14 8C21 8 24 12 24 12V40C24 40 21 38 14 38C7 38 4 40 4 40V12ZM24 12C24 12 27 8 34 8C41 8 44 12 44 12V40C44 40 41 38 34 38C27 38 24 40 24 40V12Z"
+									stroke="#0466C8"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+							<label class="lbl-hobbi">Leer<br />Libros</label>
+						</div>
+						<span class="tooltip-box">Ver más</span>
+					</a>
 
-    <div class="container-third">
-      <div class="third-section">
-        <div class="lbl-wrapper">
-          <label for="lbl-title" class="lbl-title">&gt;&gt;Mis</label>
-          <label for="lbl-title" class="lbl-title2">Hobbies_</label>
-        </div>
-        <div class="hobbis-wrapper">
+					<!-- Desarrollar Apps -->
+					<a href="./pages" class="tooltip">
+						<div class="hobbie-item">
+							<svg
+								width="48"
+								height="48"
+								viewBox="0 0 48 48"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M24.1875 31.5469C24.1875 31.7531 24.3469 31.9219 24.5391 31.9219H33.2109C33.4031 31.9219 33.5625 31.7531 33.5625 31.5469V29.2969C33.5625 29.0906 33.4031 28.9219 33.2109 28.9219H24.5391C24.3469 28.9219 24.1875 29.0906 24.1875 29.2969V31.5469ZM15.0516 31.8328L24.0516 24.2859C24.2297 24.1359 24.2297 23.8594 24.0516 23.7094L15.0516 16.1672C14.9972 16.121 14.9308 16.0913 14.8601 16.0818C14.7894 16.0722 14.7175 16.0831 14.6528 16.1132C14.5882 16.1434 14.5335 16.1914 14.4954 16.2516C14.4572 16.3119 14.4371 16.3818 14.4375 16.4531V19.3922C14.4375 19.5047 14.4844 19.6078 14.5734 19.6781L19.7203 24L14.5734 28.3219C14.5315 28.3569 14.4977 28.4006 14.4742 28.45C14.4508 28.4993 14.4382 28.5532 14.4375 28.6078V31.5469C14.4375 31.8656 14.8078 32.0391 15.0516 31.8328ZM41.25 5.25H6.75C5.92031 5.25 5.25 5.92031 5.25 6.75V41.25C5.25 42.0797 5.92031 42.75 6.75 42.75H41.25C42.0797 42.75 42.75 42.0797 42.75 41.25V6.75C42.75 5.92031 42.0797 5.25 41.25 5.25ZM39.375 39.375H8.625V8.625H39.375V39.375Z"
+									fill="#0466C8"
+								/>
+							</svg>
+							<label class="lbl-hobbi">Desarrollar Apps</label>
+						</div>
+						<span class="tooltip-box">Ver más</span>
+					</a>
 
-          <!-- leer libros -->
-          <a href="./pages" class="tooltip" >
-            <div class="hobbie-item">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 12C4 12 7 8 14 8C21 8 24 12 24 12V40C24 40 21 38 14 38C7 38 4 40 4 40V12ZM24 12C24 12 27 8 34 8C41 8 44 12 44 12V40C44 40 41 38 34 38C27 38 24 40 24 40V12Z" stroke="#0466C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <label class="lbl-hobbi">Leer<br>Libros</label>
-            </div>
-            <span class="tooltip-box">Ver más</span>
-          </a>
+					<!-- Jugar Videojuegos -->
+					<a href="./pages" class="tooltip">
+						<div class="hobbie-item">
+							<svg
+								width="48"
+								height="48"
+								viewBox="0 0 48 48"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M41.92 40C40 40.96 37.44 40.32 36.16 38.4L32.64 33.92H15.36L11.84 38.4C10.24 40.64 7.36 40.96 5.12 39.36C3.52 38.08 2.88 36.16 3.2 34.56L5.44 22.72C6.08 18.88 9.6 16 13.44 16H22.4V11.2C22.4 8.64002 24.32 6.40002 26.88 6.40002H36.8C37.76 6.40002 38.4 7.04002 38.4 8.00002C38.4 8.96002 37.76 9.60002 36.8 9.60002H27.2C26.24 9.60002 25.6 10.24 25.6 10.88V16H34.56C38.4 16 41.92 18.88 42.56 22.72L44.8 34.56C45.12 36.8 44.16 39.04 41.92 40ZM19.2 24C19.2 21.44 16.96 19.2 14.4 19.2C11.84 19.2 9.6 21.44 9.6 24C9.6 26.56 11.84 28.8 14.4 28.8C16.96 28.8 19.2 26.56 19.2 24ZM38.4 24C38.4 23.04 37.76 22.4 36.8 22.4H35.2V20.8C35.2 19.84 34.56 19.2 33.6 19.2C32.64 19.2 32 19.84 32 20.8V22.4H30.4C29.44 22.4 28.8 23.04 28.8 24C28.8 24.96 29.44 25.6 30.4 25.6H32V27.2C32 28.16 32.64 28.8 33.6 28.8C34.56 28.8 35.2 28.16 35.2 27.2V25.6H36.8C37.76 25.6 38.4 24.96 38.4 24Z"
+									fill="#0466C8"
+								/>
+							</svg>
+							<label class="lbl-hobbi">Jugar Videojuegos</label>
+						</div>
+						<span class="tooltip-box">Ver más</span>
+					</a>
 
-          <!-- Desarrollar Apps -->
-          <a href="./pages" class="tooltip">
-            <div class="hobbie-item">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24.1875 31.5469C24.1875 31.7531 24.3469 31.9219 24.5391 31.9219H33.2109C33.4031 31.9219 33.5625 31.7531 33.5625 31.5469V29.2969C33.5625 29.0906 33.4031 28.9219 33.2109 28.9219H24.5391C24.3469 28.9219 24.1875 29.0906 24.1875 29.2969V31.5469ZM15.0516 31.8328L24.0516 24.2859C24.2297 24.1359 24.2297 23.8594 24.0516 23.7094L15.0516 16.1672C14.9972 16.121 14.9308 16.0913 14.8601 16.0818C14.7894 16.0722 14.7175 16.0831 14.6528 16.1132C14.5882 16.1434 14.5335 16.1914 14.4954 16.2516C14.4572 16.3119 14.4371 16.3818 14.4375 16.4531V19.3922C14.4375 19.5047 14.4844 19.6078 14.5734 19.6781L19.7203 24L14.5734 28.3219C14.5315 28.3569 14.4977 28.4006 14.4742 28.45C14.4508 28.4993 14.4382 28.5532 14.4375 28.6078V31.5469C14.4375 31.8656 14.8078 32.0391 15.0516 31.8328ZM41.25 5.25H6.75C5.92031 5.25 5.25 5.92031 5.25 6.75V41.25C5.25 42.0797 5.92031 42.75 6.75 42.75H41.25C42.0797 42.75 42.75 42.0797 42.75 41.25V6.75C42.75 5.92031 42.0797 5.25 41.25 5.25ZM39.375 39.375H8.625V8.625H39.375V39.375Z" fill="#0466C8"/>
-              </svg>
-              <label class="lbl-hobbi">Desarrollar Apps</label>
-            </div>
-            <span class="tooltip-box">Ver más</span>
-          </a>
+					<!-- Estudiar y Aprender -->
+					<a href="./pages" class="tooltip">
+						<div class="hobbie-item">
+							<svg
+								width="48"
+								height="48"
+								viewBox="0 0 48 48"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<g clip-path="url(#clip0_501_169)">
+									<path
+										d="M24 24L6.096 16.848L7.2 43.2001H2.4L3.552 15.816L0 14.4L24 4.80005L48 14.4L24 24ZM24 12C22.68 12 21.6 12.528 21.6 13.2C21.6 13.872 22.68 14.4 24 14.4C25.32 14.4 26.4 13.872 26.4 13.2C26.4 12.528 25.32 12 24 12ZM24 26.4L37.368 21.048C39.072 23.3041 40.248 26.016 40.632 28.9681C39.912 28.872 39.168 28.8 38.4 28.8C32.28 28.8 26.928 32.088 24 36.9841C22.5138 34.4899 20.4054 32.4243 17.8811 30.9897C15.3569 29.5551 12.5034 28.8006 9.6 28.8C8.832 28.8 8.088 28.872 7.368 28.9681C7.752 26.016 8.928 23.3041 10.632 21.048L24 26.4Z"
+										fill="#0466C8"
+									/>
+								</g>
+								<defs>
+									<clipPath id="clip0_501_169">
+										<rect width="48" height="48" fill="white" />
+									</clipPath>
+								</defs>
+							</svg>
+							<label class="lbl-hobbi">Estudiar y Aprender</label>
+						</div>
+						<span class="tooltip-box">Ver más</span>
+					</a>
 
-          <!-- Jugar Videojuegos -->
-          <a href="./pages" class="tooltip">
-            <div class="hobbie-item">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M41.92 40C40 40.96 37.44 40.32 36.16 38.4L32.64 33.92H15.36L11.84 38.4C10.24 40.64 7.36 40.96 5.12 39.36C3.52 38.08 2.88 36.16 3.2 34.56L5.44 22.72C6.08 18.88 9.6 16 13.44 16H22.4V11.2C22.4 8.64002 24.32 6.40002 26.88 6.40002H36.8C37.76 6.40002 38.4 7.04002 38.4 8.00002C38.4 8.96002 37.76 9.60002 36.8 9.60002H27.2C26.24 9.60002 25.6 10.24 25.6 10.88V16H34.56C38.4 16 41.92 18.88 42.56 22.72L44.8 34.56C45.12 36.8 44.16 39.04 41.92 40ZM19.2 24C19.2 21.44 16.96 19.2 14.4 19.2C11.84 19.2 9.6 21.44 9.6 24C9.6 26.56 11.84 28.8 14.4 28.8C16.96 28.8 19.2 26.56 19.2 24ZM38.4 24C38.4 23.04 37.76 22.4 36.8 22.4H35.2V20.8C35.2 19.84 34.56 19.2 33.6 19.2C32.64 19.2 32 19.84 32 20.8V22.4H30.4C29.44 22.4 28.8 23.04 28.8 24C28.8 24.96 29.44 25.6 30.4 25.6H32V27.2C32 28.16 32.64 28.8 33.6 28.8C34.56 28.8 35.2 28.16 35.2 27.2V25.6H36.8C37.76 25.6 38.4 24.96 38.4 24Z" fill="#0466C8"/>
-            </svg>
-            <label class="lbl-hobbi">Jugar Videojuegos</label>
-          </div>
-            <span class="tooltip-box">Ver más</span>
-          </a>
-          
-          <!-- Estudiar y Aprender -->
-          <a href="./pages" class="tooltip">
-            <div class="hobbie-item">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_501_169)">
-            <path d="M24 24L6.096 16.848L7.2 43.2001H2.4L3.552 15.816L0 14.4L24 4.80005L48 14.4L24 24ZM24 12C22.68 12 21.6 12.528 21.6 13.2C21.6 13.872 22.68 14.4 24 14.4C25.32 14.4 26.4 13.872 26.4 13.2C26.4 12.528 25.32 12 24 12ZM24 26.4L37.368 21.048C39.072 23.3041 40.248 26.016 40.632 28.9681C39.912 28.872 39.168 28.8 38.4 28.8C32.28 28.8 26.928 32.088 24 36.9841C22.5138 34.4899 20.4054 32.4243 17.8811 30.9897C15.3569 29.5551 12.5034 28.8006 9.6 28.8C8.832 28.8 8.088 28.872 7.368 28.9681C7.752 26.016 8.928 23.3041 10.632 21.048L24 26.4Z" fill="#0466C8"/>
-            </g>
-            <defs>
-            <clipPath id="clip0_501_169">
-            <rect width="48" height="48" fill="white"/>
-            </clipPath>
-            </defs>
-            </svg>
-            <label class="lbl-hobbi">Estudiar y Aprender</label>
-          </div>
-            <span class="tooltip-box">Ver más</span>
-          </a>  
+					<!-- Cuidar Mascotas -->
+					<a href="./pages" class="tooltip">
+						<div class="hobbie-item">
+							<svg
+								width="48"
+								height="48"
+								viewBox="0 0 48 48"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M28.56 20.16C31.68 20.16 33.6 15.6 33.6 12.72C33.6 10.32 32.4 7.43995 30 7.43995C26.88 7.43995 24.96 12 24.96 14.88C24.96 17.28 26.16 20.16 28.56 20.16ZM19.44 20.16C21.84 20.16 23.04 17.28 23.04 14.88C23.04 11.76 21.12 7.19995 18 7.19995C15.6 7.19995 14.4 10.08 14.4 12.48C14.16 15.6 16.08 20.16 19.44 20.16ZM37.2 17.76C34.08 17.76 31.92 22.08 31.92 25.2C31.92 27.36 32.88 29.52 35.04 29.52C38.16 29.52 40.32 25.2 40.32 22.08C40.32 19.92 39.12 17.76 37.2 17.76ZM16.32 25.2C16.32 22.08 13.92 17.76 11.04 17.76C8.88004 17.76 7.92004 19.92 7.92004 22.08C7.92004 25.2 10.32 29.52 13.2 29.52C15.36 29.52 16.32 27.36 16.32 25.2ZM24 24.72C19.2 24.72 12.72 32.4 12.72 37.68C12.72 40.08 14.4 40.8 16.32 40.8C19.2 40.8 21.36 38.88 24 38.88C26.4 38.88 28.56 40.8 31.2 40.8C33.12 40.8 35.28 40.32 35.28 37.68C35.28 32.4 28.8 24.72 24 24.72Z"
+									fill="#0466C8"
+								/>
+							</svg>
+							<label class="lbl-hobbi">Cuidar Mascotas</label>
+						</div>
+						<span class="tooltip-box">Ver más</span>
+					</a>
 
-          <!-- Cuidar Mascotas -->
-          <a href="./pages" class="tooltip">
-            <div class="hobbie-item">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M28.56 20.16C31.68 20.16 33.6 15.6 33.6 12.72C33.6 10.32 32.4 7.43995 30 7.43995C26.88 7.43995 24.96 12 24.96 14.88C24.96 17.28 26.16 20.16 28.56 20.16ZM19.44 20.16C21.84 20.16 23.04 17.28 23.04 14.88C23.04 11.76 21.12 7.19995 18 7.19995C15.6 7.19995 14.4 10.08 14.4 12.48C14.16 15.6 16.08 20.16 19.44 20.16ZM37.2 17.76C34.08 17.76 31.92 22.08 31.92 25.2C31.92 27.36 32.88 29.52 35.04 29.52C38.16 29.52 40.32 25.2 40.32 22.08C40.32 19.92 39.12 17.76 37.2 17.76ZM16.32 25.2C16.32 22.08 13.92 17.76 11.04 17.76C8.88004 17.76 7.92004 19.92 7.92004 22.08C7.92004 25.2 10.32 29.52 13.2 29.52C15.36 29.52 16.32 27.36 16.32 25.2ZM24 24.72C19.2 24.72 12.72 32.4 12.72 37.68C12.72 40.08 14.4 40.8 16.32 40.8C19.2 40.8 21.36 38.88 24 38.88C26.4 38.88 28.56 40.8 31.2 40.8C33.12 40.8 35.28 40.32 35.28 37.68C35.28 32.4 28.8 24.72 24 24.72Z" fill="#0466C8"/>
-            </svg>
-            <label class="lbl-hobbi">Cuidar Mascotas</label>
-            </div>
-            <span class="tooltip-box">Ver más</span>
-          </a>  
+					<!-- Viajar y Conocer -->
+					<a href="./pages" class="tooltip">
+						<div class="hobbie-item">
+							<svg
+								width="48"
+								height="48"
+								viewBox="0 0 48 48"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M5.21804 12.532C5.58404 12.04 6.06604 11.374 6.45204 10.898C7.60804 9.586 7.75804 9.414 8.81004 8.444C9.12204 8.188 9.49204 7.88 9.85404 7.59C7.18404 9.85 6.84404 12.352 9.29404 13.898C9.29004 13.898 9.29004 13.898 9.29004 13.902C12.716 15.966 20.224 15.52 26.148 12.876C31.886 10.316 34.004 6.654 31.172 4.478C28.686 4.012 25.722 3.958 22.586 4.378L22.26 3.84L22.53 2.948C24.374 2.782 26.126 2.822 27.638 3.08C28.004 3.142 28.486 3.248 28.846 3.324C29.542 3.494 29.92 3.596 30.374 3.742C30.838 3.88 31.234 4.018 31.924 4.274C32.6 4.54 32.892 4.66 33.434 4.93C34.041 5.20693 34.6307 5.52016 35.2 5.868C39.712 8.706 36.906 13.884 28.944 17.432C21.004 20.968 10.886 21.524 6.35204 18.72C6.35004 18.716 6.34404 18.712 6.33204 18.708H6.34004C3.86404 17.14 3.60404 14.864 5.21804 12.532ZM25.876 32.372L25.812 29.184L23.546 26.664C16.06 28.36 8.70204 27.996 4.61004 25.586C4.59604 25.57 4.56204 25.554 4.54804 25.538C2.23204 24.112 1.66004 22.272 1.83404 20.272C1.29204 23.198 1.24804 24.254 1.32604 26.758C1.42204 28.326 2.32804 29.772 4.15004 30.912L4.16404 30.928C8.52604 33.64 17.614 34.228 25.876 32.372ZM35.326 36.022C24.76 40.26 11.536 40.51 5.79204 36.588C6.41235 38.1039 7.2564 39.5183 8.29604 40.784C13.568 44.384 25.706 44.154 35.4 40.264C41.074 37.99 44.654 34.964 45.594 32.128L45.858 31.274C46.484 29.11 46.602 27.308 46.702 25.704C46.588 29.186 42.486 33.146 35.326 36.022ZM12.002 44.184C12.334 44.5 13.378 45.782 18.668 47.198C20.098 47.514 23.698 48.528 30.348 47.054L30.388 46.448L29.862 45.624C23.692 47.084 16.838 46.596 12.002 44.184ZM27.27 18.966L32.888 23.224C32.888 23.224 34.09 24.09 32.956 24.698C31.826 25.3 28.924 26.774 28.924 26.774L26.058 25.704L24.62 26.344L27.156 28.546L27.176 31.972L28.666 31.31L29.654 28.416C29.654 28.416 32.688 27.248 33.892 26.808C35.102 26.378 34.94 27.85 34.94 27.85L34.344 34.872L36.324 33.992L39.584 24.518C39.584 24.518 41.312 23.678 42.528 22.94C43.742 22.202 44.158 20.978 44.158 20.978C44.158 20.978 42.974 20.468 41.61 20.878C40.246 21.284 38.468 22.008 38.468 22.008L29.244 18.09L27.27 18.966ZM15.384 5.494L19.198 8.532L20.24 8.376L18.164 5.65C18.164 5.65 17.712 5.086 18.32 4.952C18.932 4.816 20.48 4.5 20.48 4.5L21.644 5.43L22.428 5.314L21.54 3.902L22.008 2.336L21.25 2.446L20.352 3.638C20.352 3.638 18.776 3.786 18.156 3.838C17.532 3.886 17.8 3.216 17.8 3.216L18.996 0L17.948 0.154L15.188 4.172C15.188 4.172 14.268 4.34 13.602 4.53C12.934 4.718 12.582 5.234 12.582 5.234C12.582 5.234 13.072 5.63 13.762 5.616C14.458 5.602 15.384 5.494 15.384 5.494ZM34.234 44.53L31.766 43.24L31.198 43.438L32.66 44.746C32.66 44.746 32.972 45.012 32.644 45.154C32.316 45.294 31.48 45.638 31.48 45.638L30.79 45.33L30.38 45.478L30.954 46.09L30.898 46.984L31.326 46.836L31.646 46.11C31.646 46.11 32.514 45.852 32.86 45.76C33.204 45.666 33.126 46.07 33.126 46.07L32.8 48L33.37 47.802L34.488 45.25C34.488 45.25 34.982 45.056 35.336 44.878C35.69 44.7 35.83 44.372 35.83 44.372C35.83 44.372 35.516 44.2 35.128 44.286C34.738 44.368 34.234 44.53 34.234 44.53Z"
+									fill="#0466C8"
+								/>
+							</svg>
+							<label class="lbl-hobbi">Viajar y Conocer</label>
+						</div>
+						<span class="tooltip-box">Ver más</span>
+					</a>
+				</div>
+			</div>
+		</div>
 
-          <!-- Viajar y Conocer -->
-          <a href="./pages" class="tooltip">
-            <div class="hobbie-item">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.21804 12.532C5.58404 12.04 6.06604 11.374 6.45204 10.898C7.60804 9.586 7.75804 9.414 8.81004 8.444C9.12204 8.188 9.49204 7.88 9.85404 7.59C7.18404 9.85 6.84404 12.352 9.29404 13.898C9.29004 13.898 9.29004 13.898 9.29004 13.902C12.716 15.966 20.224 15.52 26.148 12.876C31.886 10.316 34.004 6.654 31.172 4.478C28.686 4.012 25.722 3.958 22.586 4.378L22.26 3.84L22.53 2.948C24.374 2.782 26.126 2.822 27.638 3.08C28.004 3.142 28.486 3.248 28.846 3.324C29.542 3.494 29.92 3.596 30.374 3.742C30.838 3.88 31.234 4.018 31.924 4.274C32.6 4.54 32.892 4.66 33.434 4.93C34.041 5.20693 34.6307 5.52016 35.2 5.868C39.712 8.706 36.906 13.884 28.944 17.432C21.004 20.968 10.886 21.524 6.35204 18.72C6.35004 18.716 6.34404 18.712 6.33204 18.708H6.34004C3.86404 17.14 3.60404 14.864 5.21804 12.532ZM25.876 32.372L25.812 29.184L23.546 26.664C16.06 28.36 8.70204 27.996 4.61004 25.586C4.59604 25.57 4.56204 25.554 4.54804 25.538C2.23204 24.112 1.66004 22.272 1.83404 20.272C1.29204 23.198 1.24804 24.254 1.32604 26.758C1.42204 28.326 2.32804 29.772 4.15004 30.912L4.16404 30.928C8.52604 33.64 17.614 34.228 25.876 32.372ZM35.326 36.022C24.76 40.26 11.536 40.51 5.79204 36.588C6.41235 38.1039 7.2564 39.5183 8.29604 40.784C13.568 44.384 25.706 44.154 35.4 40.264C41.074 37.99 44.654 34.964 45.594 32.128L45.858 31.274C46.484 29.11 46.602 27.308 46.702 25.704C46.588 29.186 42.486 33.146 35.326 36.022ZM12.002 44.184C12.334 44.5 13.378 45.782 18.668 47.198C20.098 47.514 23.698 48.528 30.348 47.054L30.388 46.448L29.862 45.624C23.692 47.084 16.838 46.596 12.002 44.184ZM27.27 18.966L32.888 23.224C32.888 23.224 34.09 24.09 32.956 24.698C31.826 25.3 28.924 26.774 28.924 26.774L26.058 25.704L24.62 26.344L27.156 28.546L27.176 31.972L28.666 31.31L29.654 28.416C29.654 28.416 32.688 27.248 33.892 26.808C35.102 26.378 34.94 27.85 34.94 27.85L34.344 34.872L36.324 33.992L39.584 24.518C39.584 24.518 41.312 23.678 42.528 22.94C43.742 22.202 44.158 20.978 44.158 20.978C44.158 20.978 42.974 20.468 41.61 20.878C40.246 21.284 38.468 22.008 38.468 22.008L29.244 18.09L27.27 18.966ZM15.384 5.494L19.198 8.532L20.24 8.376L18.164 5.65C18.164 5.65 17.712 5.086 18.32 4.952C18.932 4.816 20.48 4.5 20.48 4.5L21.644 5.43L22.428 5.314L21.54 3.902L22.008 2.336L21.25 2.446L20.352 3.638C20.352 3.638 18.776 3.786 18.156 3.838C17.532 3.886 17.8 3.216 17.8 3.216L18.996 0L17.948 0.154L15.188 4.172C15.188 4.172 14.268 4.34 13.602 4.53C12.934 4.718 12.582 5.234 12.582 5.234C12.582 5.234 13.072 5.63 13.762 5.616C14.458 5.602 15.384 5.494 15.384 5.494ZM34.234 44.53L31.766 43.24L31.198 43.438L32.66 44.746C32.66 44.746 32.972 45.012 32.644 45.154C32.316 45.294 31.48 45.638 31.48 45.638L30.79 45.33L30.38 45.478L30.954 46.09L30.898 46.984L31.326 46.836L31.646 46.11C31.646 46.11 32.514 45.852 32.86 45.76C33.204 45.666 33.126 46.07 33.126 46.07L32.8 48L33.37 47.802L34.488 45.25C34.488 45.25 34.982 45.056 35.336 44.878C35.69 44.7 35.83 44.372 35.83 44.372C35.83 44.372 35.516 44.2 35.128 44.286C34.738 44.368 34.234 44.53 34.234 44.53Z" fill="#0466C8"/>
-              </svg>
-              <label class="lbl-hobbi">Viajar y Conocer</label>
-            </div>
-            <span class="tooltip-box">Ver más</span>
-          </a>
-          
-        </div>
-      </div>
-    </div>
+		<div class="container-quarter" id="skill">
+			<div class="quarter-section">
+				<div class="lbl-wrapper">
+					<label class="title">&gt;&gt;Portafolio</label>
+					<label class="subtitle">Lenguajes & Frameworks_</label>
+				</div>
+				<div class="content-wrapper">
+					<div class="content-left">
+						<div class="framework">
+							<label class="frame-lbl">HTML</label>
+						</div>
+						<div class="framework">
+							<label class="frame-lbl">CSS</label>
+						</div>
+						<div class="framework">
+							<label class="frame-lbl">JavaScript</label>
+						</div>
+						<div class="framework">
+							<label class="frame-lbl">Bootstrap</label>
+						</div>
+						<div class="framework">
+							<label class="frame-lbl">MySQL</label>
+						</div>
+						<div class="framework">
+							<label class="frame-lbl">PostgreSQL</label>
+						</div>
+					</div>
+					<div class="content-rigth">
+						<img
+							class="img-desktop"
+							src="./images/img-frameworks-desktop.png"
+						/>
+						<img class="img-mobil" src="./images/img-framework-mobil.png" />
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <div class="container-quarter" id="skill">
-      <div class="quarter-section">
-        <div class="lbl-wrapper">
-          <label class="title">&gt;&gt;Portafolio</label>
-          <label class="subtitle">Lenguajes & Frameworks_</label>
-        </div>
-        <div class="content-wrapper">
-          <div class="content-left">
-            <div class="framework">
-              <label  class="frame-lbl">HTML</label>
-            </div>
-            <div class="framework">
-              <label class="frame-lbl" >CSS</label>
-            </div>
-            <div class="framework">
-              <label  class="frame-lbl">JavaScript</label>
-            </div>
-            <div class="framework">
-              <label  class="frame-lbl">Bootstrap</label>
-            </div>
-            <div class="framework">
-              <label  class="frame-lbl">MySQL</label>
-            </div>
-            <div class="framework">
-              <label  class="frame-lbl">PostgreSQL</label>
-            </div>
-          </div>
-          <div class="content-rigth">
-            <img class="img-desktop"src="./images/img-frameworks-desktop.png">
-            <img class="img-mobil"src="./images/img-framework-mobil.png">
-          </div>
-        </div>
-      </div>
-    </div>
+		<div class="container-fifth">
+			<div class="lbl-wrapper">
+				<label class="signos">&gt;&gt;</label>
+				<label class="lbl-title">Herramientas</label>
+			</div>
+			<div class="fifth-section">
+				<div class="section-left">
+					<img class="img-desktop" src="./images/img-tools-desktop.png" />
+					<img class="img-mobil" src="./images/img-tools-mobil.png" />
+				</div>
+				<div class="section-rigth">
+					<div class="tool"><label class="tool-item">Github</label></div>
+					<div class="tool"><label class="tool-item">Git</label></div>
+					<div class="tool"><label class="tool-item">Linux</label></div>
+					<div class="tool"><label class="tool-item">Notion</label></div>
+					<div class="tool"><label class="tool-item">Ubuntu</label></div>
+					<div class="tool"><label class="tool-item">Figma</label></div>
+					<div class="tool"><label class="tool-item">VS Code</label></div>
+					<div class="tool"><label class="tool-item">Terminal</label></div>
+					<div class="tool"><label class="tool-item">VIM</label></div>
+					<div class="tool"><label class="tool-item">Adobe XD</label></div>
+					<div class="tool"><label class="tool-item">Postman</label></div>
+				</div>
+			</div>
+		</div>
 
-    <div class="container-fifth">
-      <div class="lbl-wrapper">
-          <label class="signos">&gt;&gt;</label>
-          <label class="lbl-title">Herramientas</label>
-      </div>
-      <div class="fifth-section">
-        <div class="section-left">
-          <img class="img-desktop"src="./images/img-tools-desktop.png">
-          <img class="img-mobil"src="./images/img-tools-mobil.png">
-        </div>
-        <div class="section-rigth">
-          <div class="tool"><label class="tool-item">Github</label></div>
-          <div class="tool"><label class="tool-item">Git</label></div>
-          <div class="tool"><label class="tool-item">Linux</label></div>
-          <div class="tool"><label class="tool-item">Notion</label></div>
-          <div class="tool"><label class="tool-item">Ubuntu</label></div>
-          <div class="tool"><label class="tool-item">Figma</label></div>
-          <div class="tool"><label class="tool-item">VS Code</label></div>
-          <div class="tool"><label class="tool-item">Terminal</label></div>
-          <div class="tool"><label class="tool-item">VIM</label></div>
-          <div class="tool"><label class="tool-item">Adobe XD</label></div>
-          <div class="tool"><label class="tool-item">Postman</label></div>
-        </div>
-      </div>
-    </div>
+		<div class="container-sixth" id="projects">
+			<div class="label-wrapper">
+				<label class="lbl-signo">&gt;&gt;</label>
+				<label class="lbl-title">Proyetos recientes</label>
+			</div>
 
-    <div class="container-sixth" id="projects">
-      <div class="label-wrapper">
-        <label class="lbl-signo">&gt;&gt;</label>
-        <label class="lbl-title">Proyetos recientes</label>
-      </div>
+			<div class="sixth-section">
+				<!-- todo-firebase -->
+				<div class="card">
+					<div class="front">
+						<img src="./images/proyects/todo-firebase.png" />
+					</div>
+					<div class="back">
+						<div class="back-content">
+							<label class="title">todo Firebase</label>
+							<label class="desc"
+								>📌 Todo Firebase es la puesta en practica de conocimientos de
+								basicos de Firebase realisando un CRUD con esta misma BD
+							</label>
+							<div class="lenguajes-usados">
+								<label style="background-color: #7ee8ef">HTML</label>
+								<label style="background-color: #2505ec">CSS</label>
+								<label style="background-color: #bd3aec">JS</label>
+								<label style="background-color: #05cf26">FIREBASE</label>
+							</div>
+							<div class="links">
+								<a
+									href="https://github.com/PalmaLuis/todo-firebase"
+									target="_blank"
+								>
+									<svg
+										width="18"
+										height="19"
+										viewBox="0 0 18 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g clip-path="url(#clip0_530_42)">
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M9 0.5C4.0275 0.5 0 4.5275 0 9.5C0 13.4825 2.57625 16.8462 6.15375 18.0387C6.60375 18.1175 6.7725 17.8475 6.7725 17.6112C6.7725 17.3975 6.76125 16.6887 6.76125 15.935C4.5 16.3512 3.915 15.3837 3.735 14.8775C3.63375 14.6187 3.195 13.82 2.8125 13.6062C2.4975 13.4375 2.0475 13.0212 2.80125 13.01C3.51 12.9987 4.01625 13.6625 4.185 13.9325C4.995 15.2937 6.28875 14.9112 6.80625 14.675C6.885 14.09 7.12125 13.6962 7.38 13.4712C5.3775 13.2462 3.285 12.47 3.285 9.0275C3.285 8.04875 3.63375 7.23875 4.2075 6.60875C4.1175 6.38375 3.8025 5.46125 4.2975 4.22375C4.2975 4.22375 5.05125 3.9875 6.7725 5.14625C7.4925 4.94375 8.2575 4.8425 9.0225 4.8425C9.7875 4.8425 10.5525 4.94375 11.2725 5.14625C12.9937 3.97625 13.7475 4.22375 13.7475 4.22375C14.2425 5.46125 13.9275 6.38375 13.8375 6.60875C14.4113 7.23875 14.76 8.0375 14.76 9.0275C14.76 12.4812 12.6562 13.2462 10.6537 13.4712C10.98 13.7525 11.2613 14.2925 11.2613 15.1362C11.2613 16.34 11.25 17.3075 11.25 17.6112C11.25 17.8475 11.4187 18.1287 11.8687 18.0387C13.6554 17.4355 15.2079 16.2873 16.3077 14.7555C17.4076 13.2238 17.9995 11.3857 18 9.5C18 4.5275 13.9725 0.5 9 0.5Z"
+												fill="black"
+											/>
+										</g>
+										<defs>
+											<clipPath id="clip0_530_42">
+												<rect
+													width="18"
+													height="18"
+													fill="white"
+													transform="translate(0 0.5)"
+												/>
+											</clipPath>
+										</defs>
+									</svg>
+									Repositorio
+								</a>
+								<a
+									href="https://www.figma.com/file/8Y3wdwtoaWeCn4c4yRBFgR/Untitled?node-id=0%3A1"
+									target="_blank"
+								>
+									<svg
+										width="18"
+										height="19"
+										viewBox="0 0 18 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M11.9767 1.22678C12.029 1.1744 12.0911 1.13283 12.1594 1.10448C12.2277 1.07612 12.301 1.06152 12.375 1.06152C12.449 1.06152 12.5222 1.07612 12.5906 1.10448C12.6589 1.13283 12.721 1.1744 12.7732 1.22678L17.2732 5.72678C17.3256 5.77903 17.3672 5.8411 17.3955 5.90944C17.4239 5.97778 17.4385 6.05104 17.4385 6.12503C17.4385 6.19902 17.4239 6.27228 17.3955 6.34062C17.3672 6.40896 17.3256 6.47103 17.2732 6.52328L15.1335 8.66303L14.2009 12.3902C14.1299 12.674 13.9865 12.9344 13.7845 13.1461C13.5825 13.3577 13.329 13.5132 13.0489 13.5973L1.41074 17.0893L4.90274 5.45003C4.98691 5.1702 5.1423 4.91702 5.3537 4.71528C5.56511 4.51354 5.82527 4.37015 6.10874 4.29915L9.83586 3.36765L11.9767 1.22678ZM9.95174 4.49828L6.38211 5.3904C6.28735 5.41405 6.20039 5.46197 6.12977 5.52943C6.05915 5.59689 6.00732 5.68158 5.97936 5.77515L3.08811 15.4108L12.726 12.5195C12.819 12.4913 12.9031 12.4395 12.9702 12.3691C13.0372 12.2987 13.0849 12.2122 13.1085 12.1179L14.0017 8.54715L9.95174 4.49715V4.49828Z"
+											fill="black"
+										/>
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M3.18598 15.3815L8.99998 10.625C9.22249 10.625 9.43999 10.559 9.625 10.4354C9.81001 10.3118 9.9542 10.1361 10.0393 9.93052C10.1245 9.72495 10.1468 9.49875 10.1034 9.28052C10.06 9.0623 9.95281 8.86184 9.79548 8.70451C9.63814 8.54717 9.43769 8.44003 9.21946 8.39662C9.00123 8.35321 8.77503 8.37549 8.56946 8.46064C8.3639 8.54578 8.1882 8.68998 8.06458 8.87498C7.94096 9.05999 7.87498 9.2775 7.87498 9.5L3.11848 15.314L3.08923 15.4108L3.18598 15.3815Z"
+											fill="black"
+										/>
+									</svg>
+									Diseño
+								</a>
+								<a href="https://todo-firebase-9.netlify.app/" target="_blank">
+									<svg
+										width="18"
+										height="19"
+										viewBox="0 0 18 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M14.625 1.625H16.875V3.875H14.625V1.625ZM14.625 5H16.875V7.25H14.625V5ZM11.25 1.625H13.5V3.875H11.25V1.625ZM11.25 5H13.5V7.25H11.25V5Z"
+											fill="black"
+										/>
+										<path
+											d="M15.75 9.5V12.875H2.25V3.875H9V2.75H2.25C1.95163 2.75 1.66548 2.86853 1.4545 3.0795C1.24353 3.29048 1.125 3.57663 1.125 3.875V12.875C1.125 13.1734 1.24353 13.4595 1.4545 13.6705C1.66548 13.8815 1.95163 14 2.25 14H6.75V16.25H4.5V17.375H13.5V16.25H11.25V14H15.75C16.0484 14 16.3345 13.8815 16.5455 13.6705C16.7565 13.4595 16.875 13.1734 16.875 12.875V9.5H15.75ZM10.125 16.25H7.875V14H10.125V16.25Z"
+											fill="black"
+										/>
+									</svg>
+									Pagina Web
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 
-      <div class="sixth-section">
+				<!-- advice -->
+				<div class="card">
+					<div class="front">
+						<img src="./images/proyects/advice.png" />
+					</div>
+					<div class="back">
+						<div class="back-content">
+							<label class="title">Advice Generator App</label>
+							<label class="desc"
+								>📌 Advice generator interactura con la API de un tercero
+								llamado API Advice Slip para generar citas aleatorias de
+								consejos.
+							</label>
+							<div class="lenguajes-usados">
+								<label style="background-color: #7ee8ef">HTML</label>
+								<label style="background-color: #2505ec">SASS</label>
+								<label style="background-color: #bd3aec">JS</label>
+								<label style="background-color: #05cf26">API</label>
+							</div>
+							<div class="links">
+								<a
+									href="https://github.com/PalmaLuis/advice-app"
+									target="_blank"
+								>
+									<svg
+										width="18"
+										height="19"
+										viewBox="0 0 18 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g clip-path="url(#clip0_530_42)">
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M9 0.5C4.0275 0.5 0 4.5275 0 9.5C0 13.4825 2.57625 16.8462 6.15375 18.0387C6.60375 18.1175 6.7725 17.8475 6.7725 17.6112C6.7725 17.3975 6.76125 16.6887 6.76125 15.935C4.5 16.3512 3.915 15.3837 3.735 14.8775C3.63375 14.6187 3.195 13.82 2.8125 13.6062C2.4975 13.4375 2.0475 13.0212 2.80125 13.01C3.51 12.9987 4.01625 13.6625 4.185 13.9325C4.995 15.2937 6.28875 14.9112 6.80625 14.675C6.885 14.09 7.12125 13.6962 7.38 13.4712C5.3775 13.2462 3.285 12.47 3.285 9.0275C3.285 8.04875 3.63375 7.23875 4.2075 6.60875C4.1175 6.38375 3.8025 5.46125 4.2975 4.22375C4.2975 4.22375 5.05125 3.9875 6.7725 5.14625C7.4925 4.94375 8.2575 4.8425 9.0225 4.8425C9.7875 4.8425 10.5525 4.94375 11.2725 5.14625C12.9937 3.97625 13.7475 4.22375 13.7475 4.22375C14.2425 5.46125 13.9275 6.38375 13.8375 6.60875C14.4113 7.23875 14.76 8.0375 14.76 9.0275C14.76 12.4812 12.6562 13.2462 10.6537 13.4712C10.98 13.7525 11.2613 14.2925 11.2613 15.1362C11.2613 16.34 11.25 17.3075 11.25 17.6112C11.25 17.8475 11.4187 18.1287 11.8687 18.0387C13.6554 17.4355 15.2079 16.2873 16.3077 14.7555C17.4076 13.2238 17.9995 11.3857 18 9.5C18 4.5275 13.9725 0.5 9 0.5Z"
+												fill="black"
+											/>
+										</g>
+										<defs>
+											<clipPath id="clip0_530_42">
+												<rect
+													width="18"
+													height="18"
+													fill="white"
+													transform="translate(0 0.5)"
+												/>
+											</clipPath>
+										</defs>
+									</svg>
+									Repositorio
+								</a>
+								<a
+									href="https://www.figma.com/file/oeq44Lh6xKYSBhccaLJLbI/Advice-Generator-App?node-id=0%3A1"
+									target="_blank"
+								>
+									<svg
+										width="18"
+										height="19"
+										viewBox="0 0 18 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M11.9767 1.22678C12.029 1.1744 12.0911 1.13283 12.1594 1.10448C12.2277 1.07612 12.301 1.06152 12.375 1.06152C12.449 1.06152 12.5222 1.07612 12.5906 1.10448C12.6589 1.13283 12.721 1.1744 12.7732 1.22678L17.2732 5.72678C17.3256 5.77903 17.3672 5.8411 17.3955 5.90944C17.4239 5.97778 17.4385 6.05104 17.4385 6.12503C17.4385 6.19902 17.4239 6.27228 17.3955 6.34062C17.3672 6.40896 17.3256 6.47103 17.2732 6.52328L15.1335 8.66303L14.2009 12.3902C14.1299 12.674 13.9865 12.9344 13.7845 13.1461C13.5825 13.3577 13.329 13.5132 13.0489 13.5973L1.41074 17.0893L4.90274 5.45003C4.98691 5.1702 5.1423 4.91702 5.3537 4.71528C5.56511 4.51354 5.82527 4.37015 6.10874 4.29915L9.83586 3.36765L11.9767 1.22678ZM9.95174 4.49828L6.38211 5.3904C6.28735 5.41405 6.20039 5.46197 6.12977 5.52943C6.05915 5.59689 6.00732 5.68158 5.97936 5.77515L3.08811 15.4108L12.726 12.5195C12.819 12.4913 12.9031 12.4395 12.9702 12.3691C13.0372 12.2987 13.0849 12.2122 13.1085 12.1179L14.0017 8.54715L9.95174 4.49715V4.49828Z"
+											fill="black"
+										/>
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M3.18598 15.3815L8.99998 10.625C9.22249 10.625 9.43999 10.559 9.625 10.4354C9.81001 10.3118 9.9542 10.1361 10.0393 9.93052C10.1245 9.72495 10.1468 9.49875 10.1034 9.28052C10.06 9.0623 9.95281 8.86184 9.79548 8.70451C9.63814 8.54717 9.43769 8.44003 9.21946 8.39662C9.00123 8.35321 8.77503 8.37549 8.56946 8.46064C8.3639 8.54578 8.1882 8.68998 8.06458 8.87498C7.94096 9.05999 7.87498 9.2775 7.87498 9.5L3.11848 15.314L3.08923 15.4108L3.18598 15.3815Z"
+											fill="black"
+										/>
+									</svg>
+									Diseño
+								</a>
+								<a href="https://advice-app-gen.netlify.app" target="_blank">
+									<svg
+										width="18"
+										height="19"
+										viewBox="0 0 18 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M14.625 1.625H16.875V3.875H14.625V1.625ZM14.625 5H16.875V7.25H14.625V5ZM11.25 1.625H13.5V3.875H11.25V1.625ZM11.25 5H13.5V7.25H11.25V5Z"
+											fill="black"
+										/>
+										<path
+											d="M15.75 9.5V12.875H2.25V3.875H9V2.75H2.25C1.95163 2.75 1.66548 2.86853 1.4545 3.0795C1.24353 3.29048 1.125 3.57663 1.125 3.875V12.875C1.125 13.1734 1.24353 13.4595 1.4545 13.6705C1.66548 13.8815 1.95163 14 2.25 14H6.75V16.25H4.5V17.375H13.5V16.25H11.25V14H15.75C16.0484 14 16.3345 13.8815 16.5455 13.6705C16.7565 13.4595 16.875 13.1734 16.875 12.875V9.5H15.75ZM10.125 16.25H7.875V14H10.125V16.25Z"
+											fill="black"
+										/>
+									</svg>
+									Pagina Web
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 
-        <!-- todo-firebase -->
-        <div class="card ">
-          <div class="front">
-            <img src="./images/proyects/todo-firebase.png">
-          </div>
-          <div class="back">
-            <div class="back-content ">
-              <label class="title">todo Firebase</label>
-              <label class="desc">📌 Todo Firebase es la puesta en practica de conocimientos de basicos de Firebase
-                realisando un CRUD con esta misma BD
-              </label>
-              <div class="lenguajes-usados">
-                <label style="background-color: #7EE8EF;">HTML</label>
-                <label style="background-color: #2505EC;">CSS</label>
-                <label style="background-color: #BD3AEC;">JS</label>
-                <label style="background-color: #05CF26;">FIREBASE</label>
-              </div>
-              <div class="links">
-                <a href="https://github.com/PalmaLuis/todo-firebase" target="_blank">
-                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_530_42)">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0.5C4.0275 0.5 0 4.5275 0 9.5C0 13.4825 2.57625 16.8462 6.15375 18.0387C6.60375 18.1175 6.7725 17.8475 6.7725 17.6112C6.7725 17.3975 6.76125 16.6887 6.76125 15.935C4.5 16.3512 3.915 15.3837 3.735 14.8775C3.63375 14.6187 3.195 13.82 2.8125 13.6062C2.4975 13.4375 2.0475 13.0212 2.80125 13.01C3.51 12.9987 4.01625 13.6625 4.185 13.9325C4.995 15.2937 6.28875 14.9112 6.80625 14.675C6.885 14.09 7.12125 13.6962 7.38 13.4712C5.3775 13.2462 3.285 12.47 3.285 9.0275C3.285 8.04875 3.63375 7.23875 4.2075 6.60875C4.1175 6.38375 3.8025 5.46125 4.2975 4.22375C4.2975 4.22375 5.05125 3.9875 6.7725 5.14625C7.4925 4.94375 8.2575 4.8425 9.0225 4.8425C9.7875 4.8425 10.5525 4.94375 11.2725 5.14625C12.9937 3.97625 13.7475 4.22375 13.7475 4.22375C14.2425 5.46125 13.9275 6.38375 13.8375 6.60875C14.4113 7.23875 14.76 8.0375 14.76 9.0275C14.76 12.4812 12.6562 13.2462 10.6537 13.4712C10.98 13.7525 11.2613 14.2925 11.2613 15.1362C11.2613 16.34 11.25 17.3075 11.25 17.6112C11.25 17.8475 11.4187 18.1287 11.8687 18.0387C13.6554 17.4355 15.2079 16.2873 16.3077 14.7555C17.4076 13.2238 17.9995 11.3857 18 9.5C18 4.5275 13.9725 0.5 9 0.5Z" fill="black"/>
-                  </g>
-                  <defs>
-                  <clipPath id="clip0_530_42">
-                  <rect width="18" height="18" fill="white" transform="translate(0 0.5)"/>
-                  </clipPath>
-                  </defs>
-                  </svg>
-                  Repositorio
-                </a>
-                <a href="https://www.figma.com/file/8Y3wdwtoaWeCn4c4yRBFgR/Untitled?node-id=0%3A1" target="_blank">
-                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9767 1.22678C12.029 1.1744 12.0911 1.13283 12.1594 1.10448C12.2277 1.07612 12.301 1.06152 12.375 1.06152C12.449 1.06152 12.5222 1.07612 12.5906 1.10448C12.6589 1.13283 12.721 1.1744 12.7732 1.22678L17.2732 5.72678C17.3256 5.77903 17.3672 5.8411 17.3955 5.90944C17.4239 5.97778 17.4385 6.05104 17.4385 6.12503C17.4385 6.19902 17.4239 6.27228 17.3955 6.34062C17.3672 6.40896 17.3256 6.47103 17.2732 6.52328L15.1335 8.66303L14.2009 12.3902C14.1299 12.674 13.9865 12.9344 13.7845 13.1461C13.5825 13.3577 13.329 13.5132 13.0489 13.5973L1.41074 17.0893L4.90274 5.45003C4.98691 5.1702 5.1423 4.91702 5.3537 4.71528C5.56511 4.51354 5.82527 4.37015 6.10874 4.29915L9.83586 3.36765L11.9767 1.22678ZM9.95174 4.49828L6.38211 5.3904C6.28735 5.41405 6.20039 5.46197 6.12977 5.52943C6.05915 5.59689 6.00732 5.68158 5.97936 5.77515L3.08811 15.4108L12.726 12.5195C12.819 12.4913 12.9031 12.4395 12.9702 12.3691C13.0372 12.2987 13.0849 12.2122 13.1085 12.1179L14.0017 8.54715L9.95174 4.49715V4.49828Z" fill="black"/>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.18598 15.3815L8.99998 10.625C9.22249 10.625 9.43999 10.559 9.625 10.4354C9.81001 10.3118 9.9542 10.1361 10.0393 9.93052C10.1245 9.72495 10.1468 9.49875 10.1034 9.28052C10.06 9.0623 9.95281 8.86184 9.79548 8.70451C9.63814 8.54717 9.43769 8.44003 9.21946 8.39662C9.00123 8.35321 8.77503 8.37549 8.56946 8.46064C8.3639 8.54578 8.1882 8.68998 8.06458 8.87498C7.94096 9.05999 7.87498 9.2775 7.87498 9.5L3.11848 15.314L3.08923 15.4108L3.18598 15.3815Z" fill="black"/>
-                  </svg>
-                  Diseño
-                </a>
-                <a href="https://todo-firebase-9.netlify.app/" target="_blank">
-                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.625 1.625H16.875V3.875H14.625V1.625ZM14.625 5H16.875V7.25H14.625V5ZM11.25 1.625H13.5V3.875H11.25V1.625ZM11.25 5H13.5V7.25H11.25V5Z" fill="black"/>
-                  <path d="M15.75 9.5V12.875H2.25V3.875H9V2.75H2.25C1.95163 2.75 1.66548 2.86853 1.4545 3.0795C1.24353 3.29048 1.125 3.57663 1.125 3.875V12.875C1.125 13.1734 1.24353 13.4595 1.4545 13.6705C1.66548 13.8815 1.95163 14 2.25 14H6.75V16.25H4.5V17.375H13.5V16.25H11.25V14H15.75C16.0484 14 16.3345 13.8815 16.5455 13.6705C16.7565 13.4595 16.875 13.1734 16.875 12.875V9.5H15.75ZM10.125 16.25H7.875V14H10.125V16.25Z" fill="black"/>
-                  </svg>
-                  Pagina Web
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- advice -->
-        <div class="card ">
-          <div class="front">
-            <img src="./images/proyects/advice.png">
-          </div>
-          <div class="back">
-            <div class="back-content ">
-              <label class="title">Advice Generator App</label>
-              <label class="desc">📌 Advice generator interactura con la API 
-                de un tercero llamado API Advice Slip para generar citas aleatorias de consejos.
-              </label>
-              <div class="lenguajes-usados">
-                <label style="background-color: #7EE8EF;">HTML</label>
-                <label style="background-color: #2505EC;">SASS</label>
-                <label style="background-color: #BD3AEC;">JS</label>
-                <label style="background-color: #05CF26;">API</label>
-              </div>
-              <div class="links">
-                <a href="https://github.com/PalmaLuis/advice-app" target="_blank">
-                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_530_42)">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0.5C4.0275 0.5 0 4.5275 0 9.5C0 13.4825 2.57625 16.8462 6.15375 18.0387C6.60375 18.1175 6.7725 17.8475 6.7725 17.6112C6.7725 17.3975 6.76125 16.6887 6.76125 15.935C4.5 16.3512 3.915 15.3837 3.735 14.8775C3.63375 14.6187 3.195 13.82 2.8125 13.6062C2.4975 13.4375 2.0475 13.0212 2.80125 13.01C3.51 12.9987 4.01625 13.6625 4.185 13.9325C4.995 15.2937 6.28875 14.9112 6.80625 14.675C6.885 14.09 7.12125 13.6962 7.38 13.4712C5.3775 13.2462 3.285 12.47 3.285 9.0275C3.285 8.04875 3.63375 7.23875 4.2075 6.60875C4.1175 6.38375 3.8025 5.46125 4.2975 4.22375C4.2975 4.22375 5.05125 3.9875 6.7725 5.14625C7.4925 4.94375 8.2575 4.8425 9.0225 4.8425C9.7875 4.8425 10.5525 4.94375 11.2725 5.14625C12.9937 3.97625 13.7475 4.22375 13.7475 4.22375C14.2425 5.46125 13.9275 6.38375 13.8375 6.60875C14.4113 7.23875 14.76 8.0375 14.76 9.0275C14.76 12.4812 12.6562 13.2462 10.6537 13.4712C10.98 13.7525 11.2613 14.2925 11.2613 15.1362C11.2613 16.34 11.25 17.3075 11.25 17.6112C11.25 17.8475 11.4187 18.1287 11.8687 18.0387C13.6554 17.4355 15.2079 16.2873 16.3077 14.7555C17.4076 13.2238 17.9995 11.3857 18 9.5C18 4.5275 13.9725 0.5 9 0.5Z" fill="black"/>
-                  </g>
-                  <defs>
-                  <clipPath id="clip0_530_42">
-                  <rect width="18" height="18" fill="white" transform="translate(0 0.5)"/>
-                  </clipPath>
-                  </defs>
-                  </svg>
-                  Repositorio
-                </a>
-                <a href="https://www.figma.com/file/oeq44Lh6xKYSBhccaLJLbI/Advice-Generator-App?node-id=0%3A1" target="_blank">
-                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9767 1.22678C12.029 1.1744 12.0911 1.13283 12.1594 1.10448C12.2277 1.07612 12.301 1.06152 12.375 1.06152C12.449 1.06152 12.5222 1.07612 12.5906 1.10448C12.6589 1.13283 12.721 1.1744 12.7732 1.22678L17.2732 5.72678C17.3256 5.77903 17.3672 5.8411 17.3955 5.90944C17.4239 5.97778 17.4385 6.05104 17.4385 6.12503C17.4385 6.19902 17.4239 6.27228 17.3955 6.34062C17.3672 6.40896 17.3256 6.47103 17.2732 6.52328L15.1335 8.66303L14.2009 12.3902C14.1299 12.674 13.9865 12.9344 13.7845 13.1461C13.5825 13.3577 13.329 13.5132 13.0489 13.5973L1.41074 17.0893L4.90274 5.45003C4.98691 5.1702 5.1423 4.91702 5.3537 4.71528C5.56511 4.51354 5.82527 4.37015 6.10874 4.29915L9.83586 3.36765L11.9767 1.22678ZM9.95174 4.49828L6.38211 5.3904C6.28735 5.41405 6.20039 5.46197 6.12977 5.52943C6.05915 5.59689 6.00732 5.68158 5.97936 5.77515L3.08811 15.4108L12.726 12.5195C12.819 12.4913 12.9031 12.4395 12.9702 12.3691C13.0372 12.2987 13.0849 12.2122 13.1085 12.1179L14.0017 8.54715L9.95174 4.49715V4.49828Z" fill="black"/>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.18598 15.3815L8.99998 10.625C9.22249 10.625 9.43999 10.559 9.625 10.4354C9.81001 10.3118 9.9542 10.1361 10.0393 9.93052C10.1245 9.72495 10.1468 9.49875 10.1034 9.28052C10.06 9.0623 9.95281 8.86184 9.79548 8.70451C9.63814 8.54717 9.43769 8.44003 9.21946 8.39662C9.00123 8.35321 8.77503 8.37549 8.56946 8.46064C8.3639 8.54578 8.1882 8.68998 8.06458 8.87498C7.94096 9.05999 7.87498 9.2775 7.87498 9.5L3.11848 15.314L3.08923 15.4108L3.18598 15.3815Z" fill="black"/>
-                  </svg>
-                  Diseño
-                </a>
-                <a href="https://advice-app-gen.netlify.app" target="_blank">
-                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.625 1.625H16.875V3.875H14.625V1.625ZM14.625 5H16.875V7.25H14.625V5ZM11.25 1.625H13.5V3.875H11.25V1.625ZM11.25 5H13.5V7.25H11.25V5Z" fill="black"/>
-                  <path d="M15.75 9.5V12.875H2.25V3.875H9V2.75H2.25C1.95163 2.75 1.66548 2.86853 1.4545 3.0795C1.24353 3.29048 1.125 3.57663 1.125 3.875V12.875C1.125 13.1734 1.24353 13.4595 1.4545 13.6705C1.66548 13.8815 1.95163 14 2.25 14H6.75V16.25H4.5V17.375H13.5V16.25H11.25V14H15.75C16.0484 14 16.3345 13.8815 16.5455 13.6705C16.7565 13.4595 16.875 13.1734 16.875 12.875V9.5H15.75ZM10.125 16.25H7.875V14H10.125V16.25Z" fill="black"/>
-                  </svg>
-                  Pagina Web
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+				<!-- pokeapi -->
+				<div class="card">
+					<div class="front">
+						<img src="./images/proyects/Poke-Api.png" />
+					</div>
 
-        <!-- pokeapi -->
-        <div class="card ">
-          <div class="front">
-            <img src="./images/proyects/Poke-Api.png">
-          </div>
-
-          <div class="back">
-            <div class="back-content ">
-              <label class="title">Poke Card</label>
-              <label class="desc">📌 Pokedex random consumiendo la API
-                  pokeapi con cada actualizacion de la pagina 
-                  muestra un nuevo pokemon de forma aleatoria.
-              </label>
-              <div class="lenguajes-usados">
-                <label style="background-color: #7EE8EF;">HTML</label>
-                <label style="background-color: #2505EC;">CSS</label>
-                <label style="background-color: #BD3AEC;">JS</label>
-                <label style="background-color: #05CF26;">API</label>
-              </div>
-              <div class="links">
-                <a href="https://github.com/PalmaLuis/pokeRandom" target="_blank">
-                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_530_42)">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0.5C4.0275 0.5 0 4.5275 0 9.5C0 13.4825 2.57625 16.8462 6.15375 18.0387C6.60375 18.1175 6.7725 17.8475 6.7725 17.6112C6.7725 17.3975 6.76125 16.6887 6.76125 15.935C4.5 16.3512 3.915 15.3837 3.735 14.8775C3.63375 14.6187 3.195 13.82 2.8125 13.6062C2.4975 13.4375 2.0475 13.0212 2.80125 13.01C3.51 12.9987 4.01625 13.6625 4.185 13.9325C4.995 15.2937 6.28875 14.9112 6.80625 14.675C6.885 14.09 7.12125 13.6962 7.38 13.4712C5.3775 13.2462 3.285 12.47 3.285 9.0275C3.285 8.04875 3.63375 7.23875 4.2075 6.60875C4.1175 6.38375 3.8025 5.46125 4.2975 4.22375C4.2975 4.22375 5.05125 3.9875 6.7725 5.14625C7.4925 4.94375 8.2575 4.8425 9.0225 4.8425C9.7875 4.8425 10.5525 4.94375 11.2725 5.14625C12.9937 3.97625 13.7475 4.22375 13.7475 4.22375C14.2425 5.46125 13.9275 6.38375 13.8375 6.60875C14.4113 7.23875 14.76 8.0375 14.76 9.0275C14.76 12.4812 12.6562 13.2462 10.6537 13.4712C10.98 13.7525 11.2613 14.2925 11.2613 15.1362C11.2613 16.34 11.25 17.3075 11.25 17.6112C11.25 17.8475 11.4187 18.1287 11.8687 18.0387C13.6554 17.4355 15.2079 16.2873 16.3077 14.7555C17.4076 13.2238 17.9995 11.3857 18 9.5C18 4.5275 13.9725 0.5 9 0.5Z" fill="black"/>
-                  </g>
-                  <defs>
-                  <clipPath id="clip0_530_42">
-                  <rect width="18" height="18" fill="white" transform="translate(0 0.5)"/>
-                  </clipPath>
-                  </defs>
-                  </svg>
-                  Repositorio
-                </a>
-                <!-- <a href="#">
+					<div class="back">
+						<div class="back-content">
+							<label class="title">Poke Card</label>
+							<label class="desc"
+								>📌 Pokedex random consumiendo la API pokeapi con cada
+								actualizacion de la pagina muestra un nuevo pokemon de forma
+								aleatoria.
+							</label>
+							<div class="lenguajes-usados">
+								<label style="background-color: #7ee8ef">HTML</label>
+								<label style="background-color: #2505ec">CSS</label>
+								<label style="background-color: #bd3aec">JS</label>
+								<label style="background-color: #05cf26">API</label>
+							</div>
+							<div class="links">
+								<a
+									href="https://github.com/PalmaLuis/pokeRandom"
+									target="_blank"
+								>
+									<svg
+										width="18"
+										height="19"
+										viewBox="0 0 18 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g clip-path="url(#clip0_530_42)">
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M9 0.5C4.0275 0.5 0 4.5275 0 9.5C0 13.4825 2.57625 16.8462 6.15375 18.0387C6.60375 18.1175 6.7725 17.8475 6.7725 17.6112C6.7725 17.3975 6.76125 16.6887 6.76125 15.935C4.5 16.3512 3.915 15.3837 3.735 14.8775C3.63375 14.6187 3.195 13.82 2.8125 13.6062C2.4975 13.4375 2.0475 13.0212 2.80125 13.01C3.51 12.9987 4.01625 13.6625 4.185 13.9325C4.995 15.2937 6.28875 14.9112 6.80625 14.675C6.885 14.09 7.12125 13.6962 7.38 13.4712C5.3775 13.2462 3.285 12.47 3.285 9.0275C3.285 8.04875 3.63375 7.23875 4.2075 6.60875C4.1175 6.38375 3.8025 5.46125 4.2975 4.22375C4.2975 4.22375 5.05125 3.9875 6.7725 5.14625C7.4925 4.94375 8.2575 4.8425 9.0225 4.8425C9.7875 4.8425 10.5525 4.94375 11.2725 5.14625C12.9937 3.97625 13.7475 4.22375 13.7475 4.22375C14.2425 5.46125 13.9275 6.38375 13.8375 6.60875C14.4113 7.23875 14.76 8.0375 14.76 9.0275C14.76 12.4812 12.6562 13.2462 10.6537 13.4712C10.98 13.7525 11.2613 14.2925 11.2613 15.1362C11.2613 16.34 11.25 17.3075 11.25 17.6112C11.25 17.8475 11.4187 18.1287 11.8687 18.0387C13.6554 17.4355 15.2079 16.2873 16.3077 14.7555C17.4076 13.2238 17.9995 11.3857 18 9.5C18 4.5275 13.9725 0.5 9 0.5Z"
+												fill="black"
+											/>
+										</g>
+										<defs>
+											<clipPath id="clip0_530_42">
+												<rect
+													width="18"
+													height="18"
+													fill="white"
+													transform="translate(0 0.5)"
+												/>
+											</clipPath>
+										</defs>
+									</svg>
+									Repositorio
+								</a>
+								<!-- <a href="#">
                   <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9767 1.22678C12.029 1.1744 12.0911 1.13283 12.1594 1.10448C12.2277 1.07612 12.301 1.06152 12.375 1.06152C12.449 1.06152 12.5222 1.07612 12.5906 1.10448C12.6589 1.13283 12.721 1.1744 12.7732 1.22678L17.2732 5.72678C17.3256 5.77903 17.3672 5.8411 17.3955 5.90944C17.4239 5.97778 17.4385 6.05104 17.4385 6.12503C17.4385 6.19902 17.4239 6.27228 17.3955 6.34062C17.3672 6.40896 17.3256 6.47103 17.2732 6.52328L15.1335 8.66303L14.2009 12.3902C14.1299 12.674 13.9865 12.9344 13.7845 13.1461C13.5825 13.3577 13.329 13.5132 13.0489 13.5973L1.41074 17.0893L4.90274 5.45003C4.98691 5.1702 5.1423 4.91702 5.3537 4.71528C5.56511 4.51354 5.82527 4.37015 6.10874 4.29915L9.83586 3.36765L11.9767 1.22678ZM9.95174 4.49828L6.38211 5.3904C6.28735 5.41405 6.20039 5.46197 6.12977 5.52943C6.05915 5.59689 6.00732 5.68158 5.97936 5.77515L3.08811 15.4108L12.726 12.5195C12.819 12.4913 12.9031 12.4395 12.9702 12.3691C13.0372 12.2987 13.0849 12.2122 13.1085 12.1179L14.0017 8.54715L9.95174 4.49715V4.49828Z" fill="black"/>
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M3.18598 15.3815L8.99998 10.625C9.22249 10.625 9.43999 10.559 9.625 10.4354C9.81001 10.3118 9.9542 10.1361 10.0393 9.93052C10.1245 9.72495 10.1468 9.49875 10.1034 9.28052C10.06 9.0623 9.95281 8.86184 9.79548 8.70451C9.63814 8.54717 9.43769 8.44003 9.21946 8.39662C9.00123 8.35321 8.77503 8.37549 8.56946 8.46064C8.3639 8.54578 8.1882 8.68998 8.06458 8.87498C7.94096 9.05999 7.87498 9.2775 7.87498 9.5L3.11848 15.314L3.08923 15.4108L3.18598 15.3815Z" fill="black"/>
                   </svg>
                   Diseño
                 </a> -->
-                <a href="https://pokerandom.netlify.app" target="_blank">
-                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.625 1.625H16.875V3.875H14.625V1.625ZM14.625 5H16.875V7.25H14.625V5ZM11.25 1.625H13.5V3.875H11.25V1.625ZM11.25 5H13.5V7.25H11.25V5Z" fill="black"/>
-                  <path d="M15.75 9.5V12.875H2.25V3.875H9V2.75H2.25C1.95163 2.75 1.66548 2.86853 1.4545 3.0795C1.24353 3.29048 1.125 3.57663 1.125 3.875V12.875C1.125 13.1734 1.24353 13.4595 1.4545 13.6705C1.66548 13.8815 1.95163 14 2.25 14H6.75V16.25H4.5V17.375H13.5V16.25H11.25V14H15.75C16.0484 14 16.3345 13.8815 16.5455 13.6705C16.7565 13.4595 16.875 13.1734 16.875 12.875V9.5H15.75ZM10.125 16.25H7.875V14H10.125V16.25Z" fill="black"/>
-                  </svg>
-                  Pagina Web
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+								<a href="https://pokerandom.netlify.app" target="_blank">
+									<svg
+										width="18"
+										height="19"
+										viewBox="0 0 18 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M14.625 1.625H16.875V3.875H14.625V1.625ZM14.625 5H16.875V7.25H14.625V5ZM11.25 1.625H13.5V3.875H11.25V1.625ZM11.25 5H13.5V7.25H11.25V5Z"
+											fill="black"
+										/>
+										<path
+											d="M15.75 9.5V12.875H2.25V3.875H9V2.75H2.25C1.95163 2.75 1.66548 2.86853 1.4545 3.0795C1.24353 3.29048 1.125 3.57663 1.125 3.875V12.875C1.125 13.1734 1.24353 13.4595 1.4545 13.6705C1.66548 13.8815 1.95163 14 2.25 14H6.75V16.25H4.5V17.375H13.5V16.25H11.25V14H15.75C16.0484 14 16.3345 13.8815 16.5455 13.6705C16.7565 13.4595 16.875 13.1734 16.875 12.875V9.5H15.75ZM10.125 16.25H7.875V14H10.125V16.25Z"
+											fill="black"
+										/>
+									</svg>
+									Pagina Web
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 
-        <!-- presupuesto -->
-        <div class="card ">
-          <div class="front">
-            <img src="./images/proyects/Presupuesto.png">
-          </div>
-          <div class="back">
-            <div class="back-content ">
-              <label class="title">Presupuesto</label>
-              <label class="desc">📌 App para poder llevar el presupuesto
-                es el proyecto final que realise al terminar un curso de Javascript.
-              </label>
-              <div class="lenguajes-usados">
-                <label style="background-color: #7EE8EF;">HTML</label>
-                <label style="background-color: #2505EC;">CSS</label>
-                <label style="background-color: #BD3AEC;">JS</label>
-              </div>
-              <div class="links">
-                <a href="https://github.com/PalmaLuis/Presupuesto" target="_blank">
-                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_530_42)">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0.5C4.0275 0.5 0 4.5275 0 9.5C0 13.4825 2.57625 16.8462 6.15375 18.0387C6.60375 18.1175 6.7725 17.8475 6.7725 17.6112C6.7725 17.3975 6.76125 16.6887 6.76125 15.935C4.5 16.3512 3.915 15.3837 3.735 14.8775C3.63375 14.6187 3.195 13.82 2.8125 13.6062C2.4975 13.4375 2.0475 13.0212 2.80125 13.01C3.51 12.9987 4.01625 13.6625 4.185 13.9325C4.995 15.2937 6.28875 14.9112 6.80625 14.675C6.885 14.09 7.12125 13.6962 7.38 13.4712C5.3775 13.2462 3.285 12.47 3.285 9.0275C3.285 8.04875 3.63375 7.23875 4.2075 6.60875C4.1175 6.38375 3.8025 5.46125 4.2975 4.22375C4.2975 4.22375 5.05125 3.9875 6.7725 5.14625C7.4925 4.94375 8.2575 4.8425 9.0225 4.8425C9.7875 4.8425 10.5525 4.94375 11.2725 5.14625C12.9937 3.97625 13.7475 4.22375 13.7475 4.22375C14.2425 5.46125 13.9275 6.38375 13.8375 6.60875C14.4113 7.23875 14.76 8.0375 14.76 9.0275C14.76 12.4812 12.6562 13.2462 10.6537 13.4712C10.98 13.7525 11.2613 14.2925 11.2613 15.1362C11.2613 16.34 11.25 17.3075 11.25 17.6112C11.25 17.8475 11.4187 18.1287 11.8687 18.0387C13.6554 17.4355 15.2079 16.2873 16.3077 14.7555C17.4076 13.2238 17.9995 11.3857 18 9.5C18 4.5275 13.9725 0.5 9 0.5Z" fill="black"/>
-                  </g>
-                  <defs>
-                  <clipPath id="clip0_530_42">
-                  <rect width="18" height="18" fill="white" transform="translate(0 0.5)"/>
-                  </clipPath>
-                  </defs>
-                  </svg>
-                  Repositorio
-                </a>
-                <!-- <a href="#">
+				<!-- presupuesto -->
+				<div class="card">
+					<div class="front">
+						<img src="./images/proyects/Presupuesto.png" />
+					</div>
+					<div class="back">
+						<div class="back-content">
+							<label class="title">Presupuesto</label>
+							<label class="desc"
+								>📌 App para poder llevar el presupuesto es el proyecto final
+								que realise al terminar un curso de Javascript.
+							</label>
+							<div class="lenguajes-usados">
+								<label style="background-color: #7ee8ef">HTML</label>
+								<label style="background-color: #2505ec">CSS</label>
+								<label style="background-color: #bd3aec">JS</label>
+							</div>
+							<div class="links">
+								<a
+									href="https://github.com/PalmaLuis/Presupuesto"
+									target="_blank"
+								>
+									<svg
+										width="18"
+										height="19"
+										viewBox="0 0 18 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g clip-path="url(#clip0_530_42)">
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M9 0.5C4.0275 0.5 0 4.5275 0 9.5C0 13.4825 2.57625 16.8462 6.15375 18.0387C6.60375 18.1175 6.7725 17.8475 6.7725 17.6112C6.7725 17.3975 6.76125 16.6887 6.76125 15.935C4.5 16.3512 3.915 15.3837 3.735 14.8775C3.63375 14.6187 3.195 13.82 2.8125 13.6062C2.4975 13.4375 2.0475 13.0212 2.80125 13.01C3.51 12.9987 4.01625 13.6625 4.185 13.9325C4.995 15.2937 6.28875 14.9112 6.80625 14.675C6.885 14.09 7.12125 13.6962 7.38 13.4712C5.3775 13.2462 3.285 12.47 3.285 9.0275C3.285 8.04875 3.63375 7.23875 4.2075 6.60875C4.1175 6.38375 3.8025 5.46125 4.2975 4.22375C4.2975 4.22375 5.05125 3.9875 6.7725 5.14625C7.4925 4.94375 8.2575 4.8425 9.0225 4.8425C9.7875 4.8425 10.5525 4.94375 11.2725 5.14625C12.9937 3.97625 13.7475 4.22375 13.7475 4.22375C14.2425 5.46125 13.9275 6.38375 13.8375 6.60875C14.4113 7.23875 14.76 8.0375 14.76 9.0275C14.76 12.4812 12.6562 13.2462 10.6537 13.4712C10.98 13.7525 11.2613 14.2925 11.2613 15.1362C11.2613 16.34 11.25 17.3075 11.25 17.6112C11.25 17.8475 11.4187 18.1287 11.8687 18.0387C13.6554 17.4355 15.2079 16.2873 16.3077 14.7555C17.4076 13.2238 17.9995 11.3857 18 9.5C18 4.5275 13.9725 0.5 9 0.5Z"
+												fill="black"
+											/>
+										</g>
+										<defs>
+											<clipPath id="clip0_530_42">
+												<rect
+													width="18"
+													height="18"
+													fill="white"
+													transform="translate(0 0.5)"
+												/>
+											</clipPath>
+										</defs>
+									</svg>
+									Repositorio
+								</a>
+								<!-- <a href="#">
                   <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9767 1.22678C12.029 1.1744 12.0911 1.13283 12.1594 1.10448C12.2277 1.07612 12.301 1.06152 12.375 1.06152C12.449 1.06152 12.5222 1.07612 12.5906 1.10448C12.6589 1.13283 12.721 1.1744 12.7732 1.22678L17.2732 5.72678C17.3256 5.77903 17.3672 5.8411 17.3955 5.90944C17.4239 5.97778 17.4385 6.05104 17.4385 6.12503C17.4385 6.19902 17.4239 6.27228 17.3955 6.34062C17.3672 6.40896 17.3256 6.47103 17.2732 6.52328L15.1335 8.66303L14.2009 12.3902C14.1299 12.674 13.9865 12.9344 13.7845 13.1461C13.5825 13.3577 13.329 13.5132 13.0489 13.5973L1.41074 17.0893L4.90274 5.45003C4.98691 5.1702 5.1423 4.91702 5.3537 4.71528C5.56511 4.51354 5.82527 4.37015 6.10874 4.29915L9.83586 3.36765L11.9767 1.22678ZM9.95174 4.49828L6.38211 5.3904C6.28735 5.41405 6.20039 5.46197 6.12977 5.52943C6.05915 5.59689 6.00732 5.68158 5.97936 5.77515L3.08811 15.4108L12.726 12.5195C12.819 12.4913 12.9031 12.4395 12.9702 12.3691C13.0372 12.2987 13.0849 12.2122 13.1085 12.1179L14.0017 8.54715L9.95174 4.49715V4.49828Z" fill="black"/>
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M3.18598 15.3815L8.99998 10.625C9.22249 10.625 9.43999 10.559 9.625 10.4354C9.81001 10.3118 9.9542 10.1361 10.0393 9.93052C10.1245 9.72495 10.1468 9.49875 10.1034 9.28052C10.06 9.0623 9.95281 8.86184 9.79548 8.70451C9.63814 8.54717 9.43769 8.44003 9.21946 8.39662C9.00123 8.35321 8.77503 8.37549 8.56946 8.46064C8.3639 8.54578 8.1882 8.68998 8.06458 8.87498C7.94096 9.05999 7.87498 9.2775 7.87498 9.5L3.11848 15.314L3.08923 15.4108L3.18598 15.3815Z" fill="black"/>
                   </svg>
                   Diseño
                 </a> -->
-                <a href="https://llevarpresupuesto.netlify.app/"target="_blank">
-                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.625 1.625H16.875V3.875H14.625V1.625ZM14.625 5H16.875V7.25H14.625V5ZM11.25 1.625H13.5V3.875H11.25V1.625ZM11.25 5H13.5V7.25H11.25V5Z" fill="black"/>
-                  <path d="M15.75 9.5V12.875H2.25V3.875H9V2.75H2.25C1.95163 2.75 1.66548 2.86853 1.4545 3.0795C1.24353 3.29048 1.125 3.57663 1.125 3.875V12.875C1.125 13.1734 1.24353 13.4595 1.4545 13.6705C1.66548 13.8815 1.95163 14 2.25 14H6.75V16.25H4.5V17.375H13.5V16.25H11.25V14H15.75C16.0484 14 16.3345 13.8815 16.5455 13.6705C16.7565 13.4595 16.875 13.1734 16.875 12.875V9.5H15.75ZM10.125 16.25H7.875V14H10.125V16.25Z" fill="black"/>
-                  </svg>
-                  Pagina Web
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+								<a
+									href="https://llevarpresupuesto.netlify.app/"
+									target="_blank"
+								>
+									<svg
+										width="18"
+										height="19"
+										viewBox="0 0 18 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M14.625 1.625H16.875V3.875H14.625V1.625ZM14.625 5H16.875V7.25H14.625V5ZM11.25 1.625H13.5V3.875H11.25V1.625ZM11.25 5H13.5V7.25H11.25V5Z"
+											fill="black"
+										/>
+										<path
+											d="M15.75 9.5V12.875H2.25V3.875H9V2.75H2.25C1.95163 2.75 1.66548 2.86853 1.4545 3.0795C1.24353 3.29048 1.125 3.57663 1.125 3.875V12.875C1.125 13.1734 1.24353 13.4595 1.4545 13.6705C1.66548 13.8815 1.95163 14 2.25 14H6.75V16.25H4.5V17.375H13.5V16.25H11.25V14H15.75C16.0484 14 16.3345 13.8815 16.5455 13.6705C16.7565 13.4595 16.875 13.1734 16.875 12.875V9.5H15.75ZM10.125 16.25H7.875V14H10.125V16.25Z"
+											fill="black"
+										/>
+									</svg>
+									Pagina Web
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 
-        <!-- Glassmorphismo -->
-        <div class="card ">
-          <div class="front" >
-            <img src="./images/proyects/Glassmophismo.png">
-          </div>
-          <div class="back">
-            <div class="back-content ">
-              <label class="title">GlassMorphismo</label>
-              <label class="desc">📌 Puesta en practica de haber aprendido a maquetar
-                la tendencia del GlassMorphismo.
-              </label>
-              <div class="lenguajes-usados">
-                <label style="background-color: #7EE8EF;">HTML</label>
-                <label style="background-color: #2505EC;">CSS</label>
-                <!-- <label style="background-color: #BD3AEC;">JS</label>
+				<!-- Glassmorphismo -->
+				<div class="card">
+					<div class="front">
+						<img src="./images/proyects/Glassmophismo.png" />
+					</div>
+					<div class="back">
+						<div class="back-content">
+							<label class="title">GlassMorphismo</label>
+							<label class="desc"
+								>📌 Puesta en practica de haber aprendido a maquetar la
+								tendencia del GlassMorphismo.
+							</label>
+							<div class="lenguajes-usados">
+								<label style="background-color: #7ee8ef">HTML</label>
+								<label style="background-color: #2505ec">CSS</label>
+								<!-- <label style="background-color: #BD3AEC;">JS</label>
                 <label style="background-color: #05CF26;">API</label> -->
-              </div>
-              <div class="links">
-                <a href="https://github.com/PalmaLuis/glassmorphism" target="_blank">
-                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_530_42)">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0.5C4.0275 0.5 0 4.5275 0 9.5C0 13.4825 2.57625 16.8462 6.15375 18.0387C6.60375 18.1175 6.7725 17.8475 6.7725 17.6112C6.7725 17.3975 6.76125 16.6887 6.76125 15.935C4.5 16.3512 3.915 15.3837 3.735 14.8775C3.63375 14.6187 3.195 13.82 2.8125 13.6062C2.4975 13.4375 2.0475 13.0212 2.80125 13.01C3.51 12.9987 4.01625 13.6625 4.185 13.9325C4.995 15.2937 6.28875 14.9112 6.80625 14.675C6.885 14.09 7.12125 13.6962 7.38 13.4712C5.3775 13.2462 3.285 12.47 3.285 9.0275C3.285 8.04875 3.63375 7.23875 4.2075 6.60875C4.1175 6.38375 3.8025 5.46125 4.2975 4.22375C4.2975 4.22375 5.05125 3.9875 6.7725 5.14625C7.4925 4.94375 8.2575 4.8425 9.0225 4.8425C9.7875 4.8425 10.5525 4.94375 11.2725 5.14625C12.9937 3.97625 13.7475 4.22375 13.7475 4.22375C14.2425 5.46125 13.9275 6.38375 13.8375 6.60875C14.4113 7.23875 14.76 8.0375 14.76 9.0275C14.76 12.4812 12.6562 13.2462 10.6537 13.4712C10.98 13.7525 11.2613 14.2925 11.2613 15.1362C11.2613 16.34 11.25 17.3075 11.25 17.6112C11.25 17.8475 11.4187 18.1287 11.8687 18.0387C13.6554 17.4355 15.2079 16.2873 16.3077 14.7555C17.4076 13.2238 17.9995 11.3857 18 9.5C18 4.5275 13.9725 0.5 9 0.5Z" fill="black"/>
-                  </g>
-                  <defs>
-                  <clipPath id="clip0_530_42">
-                  <rect width="18" height="18" fill="white" transform="translate(0 0.5)"/>
-                  </clipPath>
-                  </defs>
-                  </svg>
-                  Repositorio
-                </a>
-                <!-- <a href="#">
-                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9767 1.22678C12.029 1.1744 12.0911 1.13283 12.1594 1.10448C12.2277 1.07612 12.301 1.06152 12.375 1.06152C12.449 1.06152 12.5222 1.07612 12.5906 1.10448C12.6589 1.13283 12.721 1.1744 12.7732 1.22678L17.2732 5.72678C17.3256 5.77903 17.3672 5.8411 17.3955 5.90944C17.4239 5.97778 17.4385 6.05104 17.4385 6.12503C17.4385 6.19902 17.4239 6.27228 17.3955 6.34062C17.3672 6.40896 17.3256 6.47103 17.2732 6.52328L15.1335 8.66303L14.2009 12.3902C14.1299 12.674 13.9865 12.9344 13.7845 13.1461C13.5825 13.3577 13.329 13.5132 13.0489 13.5973L1.41074 17.0893L4.90274 5.45003C4.98691 5.1702 5.1423 4.91702 5.3537 4.71528C5.56511 4.51354 5.82527 4.37015 6.10874 4.29915L9.83586 3.36765L11.9767 1.22678ZM9.95174 4.49828L6.38211 5.3904C6.28735 5.41405 6.20039 5.46197 6.12977 5.52943C6.05915 5.59689 6.00732 5.68158 5.97936 5.77515L3.08811 15.4108L12.726 12.5195C12.819 12.4913 12.9031 12.4395 12.9702 12.3691C13.0372 12.2987 13.0849 12.2122 13.1085 12.1179L14.0017 8.54715L9.95174 4.49715V4.49828Z" fill="black"/>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.18598 15.3815L8.99998 10.625C9.22249 10.625 9.43999 10.559 9.625 10.4354C9.81001 10.3118 9.9542 10.1361 10.0393 9.93052C10.1245 9.72495 10.1468 9.49875 10.1034 9.28052C10.06 9.0623 9.95281 8.86184 9.79548 8.70451C9.63814 8.54717 9.43769 8.44003 9.21946 8.39662C9.00123 8.35321 8.77503 8.37549 8.56946 8.46064C8.3639 8.54578 8.1882 8.68998 8.06458 8.87498C7.94096 9.05999 7.87498 9.2775 7.87498 9.5L3.11848 15.314L3.08923 15.4108L3.18598 15.3815Z" fill="black"/>
-                  </svg>
-                  Diseño
-                </a> -->
-                <a  href="https://glassmorphismo.netlify.app/"  target="blank">
-                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.625 1.625H16.875V3.875H14.625V1.625ZM14.625 5H16.875V7.25H14.625V5ZM11.25 1.625H13.5V3.875H11.25V1.625ZM11.25 5H13.5V7.25H11.25V5Z" fill="black"/>
-                  <path d="M15.75 9.5V12.875H2.25V3.875H9V2.75H2.25C1.95163 2.75 1.66548 2.86853 1.4545 3.0795C1.24353 3.29048 1.125 3.57663 1.125 3.875V12.875C1.125 13.1734 1.24353 13.4595 1.4545 13.6705C1.66548 13.8815 1.95163 14 2.25 14H6.75V16.25H4.5V17.375H13.5V16.25H11.25V14H15.75C16.0484 14 16.3345 13.8815 16.5455 13.6705C16.7565 13.4595 16.875 13.1734 16.875 12.875V9.5H15.75ZM10.125 16.25H7.875V14H10.125V16.25Z" fill="black"/>
-                  </svg>
-                  Pagina Web
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>  
-
-        <!-- Anymanga -->
-        <div class="card ">
-          <div class="front" >
-            <img src="./images/proyects/AnyManga.png">
-          </div>
-          <div class="back">
-            <div class="back-content ">
-              <label class="title">Anymanga</label>
-              <label class="desc">📌 Proyecto aun en trabajo en el cual se podra leer mangas
-              </label>
-              <div class="lenguajes-usados">
-                <label style="background-color: #7EE8EF;">HTML</label>
-                <label style="background-color: #2505EC;">CSS</label>
-                <label style="background-color: #BD3AEC;">JS</label>
-                <label style="background-color: #05CF26;">Bootstrap</label>
-              </div>
-              <div class="links">
-                <a href="https://github.com/PalmaLuis/AnyManga" target="_blank">
-                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_530_42)">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0.5C4.0275 0.5 0 4.5275 0 9.5C0 13.4825 2.57625 16.8462 6.15375 18.0387C6.60375 18.1175 6.7725 17.8475 6.7725 17.6112C6.7725 17.3975 6.76125 16.6887 6.76125 15.935C4.5 16.3512 3.915 15.3837 3.735 14.8775C3.63375 14.6187 3.195 13.82 2.8125 13.6062C2.4975 13.4375 2.0475 13.0212 2.80125 13.01C3.51 12.9987 4.01625 13.6625 4.185 13.9325C4.995 15.2937 6.28875 14.9112 6.80625 14.675C6.885 14.09 7.12125 13.6962 7.38 13.4712C5.3775 13.2462 3.285 12.47 3.285 9.0275C3.285 8.04875 3.63375 7.23875 4.2075 6.60875C4.1175 6.38375 3.8025 5.46125 4.2975 4.22375C4.2975 4.22375 5.05125 3.9875 6.7725 5.14625C7.4925 4.94375 8.2575 4.8425 9.0225 4.8425C9.7875 4.8425 10.5525 4.94375 11.2725 5.14625C12.9937 3.97625 13.7475 4.22375 13.7475 4.22375C14.2425 5.46125 13.9275 6.38375 13.8375 6.60875C14.4113 7.23875 14.76 8.0375 14.76 9.0275C14.76 12.4812 12.6562 13.2462 10.6537 13.4712C10.98 13.7525 11.2613 14.2925 11.2613 15.1362C11.2613 16.34 11.25 17.3075 11.25 17.6112C11.25 17.8475 11.4187 18.1287 11.8687 18.0387C13.6554 17.4355 15.2079 16.2873 16.3077 14.7555C17.4076 13.2238 17.9995 11.3857 18 9.5C18 4.5275 13.9725 0.5 9 0.5Z" fill="black"/>
-                  </g>
-                  <defs>
-                  <clipPath id="clip0_530_42">
-                  <rect width="18" height="18" fill="white" transform="translate(0 0.5)"/>
-                  </clipPath>
-                  </defs>
-                  </svg>
-                  Repositorio
-                </a>
-                <!-- <a href="#">
+							</div>
+							<div class="links">
+								<a
+									href="https://github.com/PalmaLuis/glassmorphism"
+									target="_blank"
+								>
+									<svg
+										width="18"
+										height="19"
+										viewBox="0 0 18 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g clip-path="url(#clip0_530_42)">
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M9 0.5C4.0275 0.5 0 4.5275 0 9.5C0 13.4825 2.57625 16.8462 6.15375 18.0387C6.60375 18.1175 6.7725 17.8475 6.7725 17.6112C6.7725 17.3975 6.76125 16.6887 6.76125 15.935C4.5 16.3512 3.915 15.3837 3.735 14.8775C3.63375 14.6187 3.195 13.82 2.8125 13.6062C2.4975 13.4375 2.0475 13.0212 2.80125 13.01C3.51 12.9987 4.01625 13.6625 4.185 13.9325C4.995 15.2937 6.28875 14.9112 6.80625 14.675C6.885 14.09 7.12125 13.6962 7.38 13.4712C5.3775 13.2462 3.285 12.47 3.285 9.0275C3.285 8.04875 3.63375 7.23875 4.2075 6.60875C4.1175 6.38375 3.8025 5.46125 4.2975 4.22375C4.2975 4.22375 5.05125 3.9875 6.7725 5.14625C7.4925 4.94375 8.2575 4.8425 9.0225 4.8425C9.7875 4.8425 10.5525 4.94375 11.2725 5.14625C12.9937 3.97625 13.7475 4.22375 13.7475 4.22375C14.2425 5.46125 13.9275 6.38375 13.8375 6.60875C14.4113 7.23875 14.76 8.0375 14.76 9.0275C14.76 12.4812 12.6562 13.2462 10.6537 13.4712C10.98 13.7525 11.2613 14.2925 11.2613 15.1362C11.2613 16.34 11.25 17.3075 11.25 17.6112C11.25 17.8475 11.4187 18.1287 11.8687 18.0387C13.6554 17.4355 15.2079 16.2873 16.3077 14.7555C17.4076 13.2238 17.9995 11.3857 18 9.5C18 4.5275 13.9725 0.5 9 0.5Z"
+												fill="black"
+											/>
+										</g>
+										<defs>
+											<clipPath id="clip0_530_42">
+												<rect
+													width="18"
+													height="18"
+													fill="white"
+													transform="translate(0 0.5)"
+												/>
+											</clipPath>
+										</defs>
+									</svg>
+									Repositorio
+								</a>
+								<!-- <a href="#">
                   <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9767 1.22678C12.029 1.1744 12.0911 1.13283 12.1594 1.10448C12.2277 1.07612 12.301 1.06152 12.375 1.06152C12.449 1.06152 12.5222 1.07612 12.5906 1.10448C12.6589 1.13283 12.721 1.1744 12.7732 1.22678L17.2732 5.72678C17.3256 5.77903 17.3672 5.8411 17.3955 5.90944C17.4239 5.97778 17.4385 6.05104 17.4385 6.12503C17.4385 6.19902 17.4239 6.27228 17.3955 6.34062C17.3672 6.40896 17.3256 6.47103 17.2732 6.52328L15.1335 8.66303L14.2009 12.3902C14.1299 12.674 13.9865 12.9344 13.7845 13.1461C13.5825 13.3577 13.329 13.5132 13.0489 13.5973L1.41074 17.0893L4.90274 5.45003C4.98691 5.1702 5.1423 4.91702 5.3537 4.71528C5.56511 4.51354 5.82527 4.37015 6.10874 4.29915L9.83586 3.36765L11.9767 1.22678ZM9.95174 4.49828L6.38211 5.3904C6.28735 5.41405 6.20039 5.46197 6.12977 5.52943C6.05915 5.59689 6.00732 5.68158 5.97936 5.77515L3.08811 15.4108L12.726 12.5195C12.819 12.4913 12.9031 12.4395 12.9702 12.3691C13.0372 12.2987 13.0849 12.2122 13.1085 12.1179L14.0017 8.54715L9.95174 4.49715V4.49828Z" fill="black"/>
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M3.18598 15.3815L8.99998 10.625C9.22249 10.625 9.43999 10.559 9.625 10.4354C9.81001 10.3118 9.9542 10.1361 10.0393 9.93052C10.1245 9.72495 10.1468 9.49875 10.1034 9.28052C10.06 9.0623 9.95281 8.86184 9.79548 8.70451C9.63814 8.54717 9.43769 8.44003 9.21946 8.39662C9.00123 8.35321 8.77503 8.37549 8.56946 8.46064C8.3639 8.54578 8.1882 8.68998 8.06458 8.87498C7.94096 9.05999 7.87498 9.2775 7.87498 9.5L3.11848 15.314L3.08923 15.4108L3.18598 15.3815Z" fill="black"/>
                   </svg>
                   Diseño
                 </a> -->
-                <a  href="https://anymanga.netlify.app/"  target="blank">
+								<a href="https://glassmorphismo.netlify.app/" target="blank">
+									<svg
+										width="18"
+										height="19"
+										viewBox="0 0 18 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M14.625 1.625H16.875V3.875H14.625V1.625ZM14.625 5H16.875V7.25H14.625V5ZM11.25 1.625H13.5V3.875H11.25V1.625ZM11.25 5H13.5V7.25H11.25V5Z"
+											fill="black"
+										/>
+										<path
+											d="M15.75 9.5V12.875H2.25V3.875H9V2.75H2.25C1.95163 2.75 1.66548 2.86853 1.4545 3.0795C1.24353 3.29048 1.125 3.57663 1.125 3.875V12.875C1.125 13.1734 1.24353 13.4595 1.4545 13.6705C1.66548 13.8815 1.95163 14 2.25 14H6.75V16.25H4.5V17.375H13.5V16.25H11.25V14H15.75C16.0484 14 16.3345 13.8815 16.5455 13.6705C16.7565 13.4595 16.875 13.1734 16.875 12.875V9.5H15.75ZM10.125 16.25H7.875V14H10.125V16.25Z"
+											fill="black"
+										/>
+									</svg>
+									Pagina Web
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Anymanga -->
+				<div class="card">
+					<div class="front">
+						<img src="./images/proyects/AnyManga.png" />
+					</div>
+					<div class="back">
+						<div class="back-content">
+							<label class="title">Anymanga</label>
+							<label class="desc"
+								>📌 Proyecto aun en trabajo en el cual se podra leer mangas
+							</label>
+							<div class="lenguajes-usados">
+								<label style="background-color: #7ee8ef">HTML</label>
+								<label style="background-color: #2505ec">CSS</label>
+								<label style="background-color: #bd3aec">JS</label>
+								<label style="background-color: #05cf26">Bootstrap</label>
+							</div>
+							<div class="links">
+								<a href="https://github.com/PalmaLuis/AnyManga" target="_blank">
+									<svg
+										width="18"
+										height="19"
+										viewBox="0 0 18 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g clip-path="url(#clip0_530_42)">
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M9 0.5C4.0275 0.5 0 4.5275 0 9.5C0 13.4825 2.57625 16.8462 6.15375 18.0387C6.60375 18.1175 6.7725 17.8475 6.7725 17.6112C6.7725 17.3975 6.76125 16.6887 6.76125 15.935C4.5 16.3512 3.915 15.3837 3.735 14.8775C3.63375 14.6187 3.195 13.82 2.8125 13.6062C2.4975 13.4375 2.0475 13.0212 2.80125 13.01C3.51 12.9987 4.01625 13.6625 4.185 13.9325C4.995 15.2937 6.28875 14.9112 6.80625 14.675C6.885 14.09 7.12125 13.6962 7.38 13.4712C5.3775 13.2462 3.285 12.47 3.285 9.0275C3.285 8.04875 3.63375 7.23875 4.2075 6.60875C4.1175 6.38375 3.8025 5.46125 4.2975 4.22375C4.2975 4.22375 5.05125 3.9875 6.7725 5.14625C7.4925 4.94375 8.2575 4.8425 9.0225 4.8425C9.7875 4.8425 10.5525 4.94375 11.2725 5.14625C12.9937 3.97625 13.7475 4.22375 13.7475 4.22375C14.2425 5.46125 13.9275 6.38375 13.8375 6.60875C14.4113 7.23875 14.76 8.0375 14.76 9.0275C14.76 12.4812 12.6562 13.2462 10.6537 13.4712C10.98 13.7525 11.2613 14.2925 11.2613 15.1362C11.2613 16.34 11.25 17.3075 11.25 17.6112C11.25 17.8475 11.4187 18.1287 11.8687 18.0387C13.6554 17.4355 15.2079 16.2873 16.3077 14.7555C17.4076 13.2238 17.9995 11.3857 18 9.5C18 4.5275 13.9725 0.5 9 0.5Z"
+												fill="black"
+											/>
+										</g>
+										<defs>
+											<clipPath id="clip0_530_42">
+												<rect
+													width="18"
+													height="18"
+													fill="white"
+													transform="translate(0 0.5)"
+												/>
+											</clipPath>
+										</defs>
+									</svg>
+									Repositorio
+								</a>
+								<!-- <a href="#">
                   <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.625 1.625H16.875V3.875H14.625V1.625ZM14.625 5H16.875V7.25H14.625V5ZM11.25 1.625H13.5V3.875H11.25V1.625ZM11.25 5H13.5V7.25H11.25V5Z" fill="black"/>
-                  <path d="M15.75 9.5V12.875H2.25V3.875H9V2.75H2.25C1.95163 2.75 1.66548 2.86853 1.4545 3.0795C1.24353 3.29048 1.125 3.57663 1.125 3.875V12.875C1.125 13.1734 1.24353 13.4595 1.4545 13.6705C1.66548 13.8815 1.95163 14 2.25 14H6.75V16.25H4.5V17.375H13.5V16.25H11.25V14H15.75C16.0484 14 16.3345 13.8815 16.5455 13.6705C16.7565 13.4595 16.875 13.1734 16.875 12.875V9.5H15.75ZM10.125 16.25H7.875V14H10.125V16.25Z" fill="black"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9767 1.22678C12.029 1.1744 12.0911 1.13283 12.1594 1.10448C12.2277 1.07612 12.301 1.06152 12.375 1.06152C12.449 1.06152 12.5222 1.07612 12.5906 1.10448C12.6589 1.13283 12.721 1.1744 12.7732 1.22678L17.2732 5.72678C17.3256 5.77903 17.3672 5.8411 17.3955 5.90944C17.4239 5.97778 17.4385 6.05104 17.4385 6.12503C17.4385 6.19902 17.4239 6.27228 17.3955 6.34062C17.3672 6.40896 17.3256 6.47103 17.2732 6.52328L15.1335 8.66303L14.2009 12.3902C14.1299 12.674 13.9865 12.9344 13.7845 13.1461C13.5825 13.3577 13.329 13.5132 13.0489 13.5973L1.41074 17.0893L4.90274 5.45003C4.98691 5.1702 5.1423 4.91702 5.3537 4.71528C5.56511 4.51354 5.82527 4.37015 6.10874 4.29915L9.83586 3.36765L11.9767 1.22678ZM9.95174 4.49828L6.38211 5.3904C6.28735 5.41405 6.20039 5.46197 6.12977 5.52943C6.05915 5.59689 6.00732 5.68158 5.97936 5.77515L3.08811 15.4108L12.726 12.5195C12.819 12.4913 12.9031 12.4395 12.9702 12.3691C13.0372 12.2987 13.0849 12.2122 13.1085 12.1179L14.0017 8.54715L9.95174 4.49715V4.49828Z" fill="black"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.18598 15.3815L8.99998 10.625C9.22249 10.625 9.43999 10.559 9.625 10.4354C9.81001 10.3118 9.9542 10.1361 10.0393 9.93052C10.1245 9.72495 10.1468 9.49875 10.1034 9.28052C10.06 9.0623 9.95281 8.86184 9.79548 8.70451C9.63814 8.54717 9.43769 8.44003 9.21946 8.39662C9.00123 8.35321 8.77503 8.37549 8.56946 8.46064C8.3639 8.54578 8.1882 8.68998 8.06458 8.87498C7.94096 9.05999 7.87498 9.2775 7.87498 9.5L3.11848 15.314L3.08923 15.4108L3.18598 15.3815Z" fill="black"/>
                   </svg>
-                  Pagina Web
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+                  Diseño
+                </a> -->
+								<a href="https://anymanga.netlify.app/" target="blank">
+									<svg
+										width="18"
+										height="19"
+										viewBox="0 0 18 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M14.625 1.625H16.875V3.875H14.625V1.625ZM14.625 5H16.875V7.25H14.625V5ZM11.25 1.625H13.5V3.875H11.25V1.625ZM11.25 5H13.5V7.25H11.25V5Z"
+											fill="black"
+										/>
+										<path
+											d="M15.75 9.5V12.875H2.25V3.875H9V2.75H2.25C1.95163 2.75 1.66548 2.86853 1.4545 3.0795C1.24353 3.29048 1.125 3.57663 1.125 3.875V12.875C1.125 13.1734 1.24353 13.4595 1.4545 13.6705C1.66548 13.8815 1.95163 14 2.25 14H6.75V16.25H4.5V17.375H13.5V16.25H11.25V14H15.75C16.0484 14 16.3345 13.8815 16.5455 13.6705C16.7565 13.4595 16.875 13.1734 16.875 12.875V9.5H15.75ZM10.125 16.25H7.875V14H10.125V16.25Z"
+											fill="black"
+										/>
+									</svg>
+									Pagina Web
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--cierra la seccion 6-->
+		</div>
+		<!--cierra todo el container 6--->
 
-      </div> <!--cierra la seccion 6-->
-        
-    </div> <!--cierra todo el container 6--->
+		<div class="container-seventh" id="contact">
+			<svg class="curvitas"
+				viewBox="0 0 1361 90"
+				fill="#F8F9FA"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d="M231.5 88C115 97 1 19.5 1 19.5V1H1360V79.5C1360 79.5 1274.5 15 1152.5 31C1039.01 45.8838 1063 79.5 876.5 88C757.179 93.4382 683.926 33.1414 564.5 31C432.585 28.6347 384.5 76.1803 231.5 88Z"
+				/>
+			</svg>
 
-    <div class="container-seventh" id="contact">
-        <svg  viewBox="0 0 1361 90" fill="#F8F9FA" xmlns="http://www.w3.org/2000/svg">
-        <path d="M231.5 88C115 97 1 19.5 1 19.5V1H1360V79.5C1360 79.5 1274.5 15 1152.5 31C1039.01 45.8838 1063 79.5 876.5 88C757.179 93.4382 683.926 33.1414 564.5 31C432.585 28.6347 384.5 76.1803 231.5 88Z" />
-        </svg>
+			<div class="seventh-section-wrapper">
+				<div class="section-left">
+					<label class="lbl-title">&gt;&gt;Contactame_</label>
+					<div class="social-wrapper">
+						<a
+							href="https://www.linkedin.com/in/luis-palma-c/"
+							target="_blank"
+							style="text-decoration: none"
+							class="lbl-social"
+						>
+							<svg
+								width="18"
+								height="18"
+								viewBox="0 0 18 18"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M0.75 2.1285C0.75 1.7629 0.895235 1.41227 1.15375 1.15376C1.41227 0.895236 1.7629 0.750002 2.1285 0.750002H15.87C16.0512 0.749706 16.2306 0.785149 16.3981 0.854302C16.5656 0.923455 16.7178 1.02496 16.8459 1.153C16.9741 1.28105 17.0758 1.43312 17.1451 1.60051C17.2145 1.7679 17.2501 1.94732 17.25 2.1285V15.87C17.2502 16.0512 17.2147 16.2307 17.1454 16.3982C17.0762 16.5656 16.9746 16.7178 16.8465 16.846C16.7184 16.9742 16.5663 17.0758 16.3989 17.1451C16.2314 17.2145 16.052 17.2501 15.8708 17.25H2.1285C1.94741 17.25 1.76809 17.2143 1.6008 17.145C1.4335 17.0757 1.2815 16.9741 1.15349 16.846C1.02547 16.7179 0.923949 16.5658 0.854717 16.3985C0.785485 16.2312 0.749902 16.0518 0.75 15.8707V2.1285ZM7.281 7.041H9.51525V8.163C9.83775 7.518 10.6628 6.9375 11.9025 6.9375C14.2793 6.9375 14.8425 8.22225 14.8425 10.5795V14.946H12.4373V11.1165C12.4373 9.774 12.1148 9.0165 11.2958 9.0165C10.1595 9.0165 9.687 9.83325 9.687 11.1165V14.946H7.281V7.041ZM3.156 14.8433H5.562V6.9375H3.156V14.8425V14.8433ZM5.90625 4.359C5.91079 4.56501 5.87413 4.76984 5.79843 4.96149C5.72273 5.15313 5.60951 5.32773 5.46542 5.47503C5.32133 5.62232 5.14927 5.73936 4.95934 5.81926C4.76941 5.89916 4.56543 5.94031 4.35938 5.94031C4.15332 5.94031 3.94934 5.89916 3.75941 5.81926C3.56948 5.73936 3.39742 5.62232 3.25333 5.47503C3.10924 5.32773 2.99602 5.15313 2.92032 4.96149C2.84462 4.76984 2.80796 4.56501 2.8125 4.359C2.8214 3.95464 2.98829 3.56984 3.27741 3.28702C3.56654 3.00419 3.95492 2.84581 4.35938 2.84581C4.76383 2.84581 5.15221 3.00419 5.44134 3.28702C5.73046 3.56984 5.89735 3.95464 5.90625 4.359Z"
+									fill="#F8F8F8"
+								/>
+							</svg>
+							Linkedin
+						</a>
+						<a
+							href="https://www.facebook.com/luisito.palma"
+							target="_blank"
+							style="text-decoration: none"
+							class="lbl-social"
+						>
+							<svg
+								width="18"
+								height="18"
+								viewBox="0 0 18 18"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M15.4688 1.96875H2.53125C2.22012 1.96875 1.96875 2.22012 1.96875 2.53125V15.4688C1.96875 15.7799 2.22012 16.0312 2.53125 16.0312H15.4688C15.7799 16.0312 16.0312 15.7799 16.0312 15.4688V2.53125C16.0312 2.22012 15.7799 1.96875 15.4688 1.96875ZM13.8445 6.07324H12.7213C11.8406 6.07324 11.6701 6.4916 11.6701 7.10684V8.46211H13.7725L13.4982 10.5838H11.6701V16.0312H9.47813V10.5855H7.64473V8.46211H9.47813V6.89766C9.47813 5.08184 10.5873 4.09219 12.208 4.09219C12.985 4.09219 13.6512 4.1502 13.8463 4.17656V6.07324H13.8445Z"
+									fill="#F8F8F8"
+								/>
+							</svg>
+							Facebook
+						</a>
+						<a
+							href="https://www.github.com/PalmaLuis"
+							target="_blank"
+							style="text-decoration: none"
+							class="lbl-social"
+						>
+							<svg
+								width="16"
+								height="18"
+								viewBox="0 0 16 18"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<g clip-path="url(#clip0_501_527)">
+									<path
+										d="M14.0625 1.125H1.6875C0.755859 1.125 0 1.88086 0 2.8125V15.1875C0 16.1191 0.755859 16.875 1.6875 16.875H14.0625C14.9941 16.875 15.75 16.1191 15.75 15.1875V2.8125C15.75 1.88086 14.9941 1.125 14.0625 1.125ZM9.74883 14.6145C9.45352 14.6672 9.34453 14.4844 9.34453 14.3332C9.34453 14.1434 9.35156 13.173 9.35156 12.3891C9.35156 11.8406 9.16875 11.4926 8.9543 11.3098C10.2551 11.1656 11.6262 10.9863 11.6262 8.73984C11.6262 8.1 11.3977 7.78008 11.025 7.36875C11.0848 7.21758 11.2852 6.59531 10.9652 5.78672C10.4766 5.63555 9.35859 6.41602 9.35859 6.41602C8.89453 6.28594 8.3918 6.21914 7.89609 6.21914C7.40039 6.21914 6.89766 6.28594 6.43359 6.41602C6.43359 6.41602 5.31563 5.63555 4.82695 5.78672C4.50703 6.5918 4.70391 7.21406 4.76719 7.36875C4.39453 7.78008 4.21875 8.1 4.21875 8.73984C4.21875 10.9758 5.53008 11.1656 6.83086 11.3098C6.66211 11.4609 6.51094 11.7211 6.4582 12.0938C6.12422 12.2449 5.26992 12.5051 4.76016 11.6051C4.44023 11.0496 3.86367 11.0039 3.86367 11.0039C3.29414 10.9969 3.825 11.3625 3.825 11.3625C4.20469 11.5383 4.47187 12.2133 4.47187 12.2133C4.81289 13.2574 6.44414 12.9059 6.44414 12.9059C6.44414 13.3945 6.45117 14.1891 6.45117 14.3332C6.45117 14.4844 6.3457 14.6672 6.04688 14.6145C3.72656 13.8375 2.10234 11.6297 2.10234 9.04922C2.10234 5.82187 4.57031 3.37148 7.79766 3.37148C11.025 3.37148 13.6406 5.82187 13.6406 9.04922C13.6441 11.6297 12.0691 13.841 9.74883 14.6145ZM6.3 12.4664C6.2332 12.4805 6.16992 12.4523 6.16289 12.4066C6.15586 12.3539 6.20156 12.3082 6.26836 12.2941C6.33516 12.2871 6.39844 12.3152 6.40547 12.3609C6.41602 12.4066 6.37031 12.4523 6.3 12.4664ZM5.96602 12.4348C5.96602 12.4805 5.91328 12.5191 5.84297 12.5191C5.76562 12.5262 5.71289 12.4875 5.71289 12.4348C5.71289 12.3891 5.76562 12.3504 5.83594 12.3504C5.90273 12.3434 5.96602 12.382 5.96602 12.4348ZM5.48438 12.3961C5.47031 12.4418 5.4 12.4629 5.34023 12.4418C5.27344 12.4277 5.22773 12.375 5.2418 12.3293C5.25586 12.2836 5.32617 12.2625 5.38594 12.2766C5.45625 12.2977 5.50195 12.3504 5.48438 12.3961ZM5.05195 12.2063C5.02031 12.2449 4.95352 12.2379 4.90078 12.1852C4.84805 12.1395 4.83398 12.0727 4.86914 12.041C4.90078 12.0023 4.96758 12.0094 5.02031 12.0621C5.06602 12.1078 5.08359 12.1781 5.05195 12.2063ZM4.73203 11.8863C4.70039 11.9074 4.64062 11.8863 4.60195 11.8336C4.56328 11.7809 4.56328 11.7211 4.60195 11.6965C4.64062 11.6648 4.70039 11.6895 4.73203 11.7422C4.7707 11.7949 4.7707 11.8582 4.73203 11.8863ZM4.50352 11.5453C4.47188 11.577 4.41914 11.5594 4.38047 11.5242C4.3418 11.4785 4.33477 11.4258 4.36641 11.4012C4.39805 11.3695 4.45078 11.3871 4.48945 11.4223C4.52812 11.468 4.53516 11.5207 4.50352 11.5453ZM4.26797 11.2852C4.25391 11.3168 4.2082 11.3238 4.16953 11.2992C4.12383 11.2781 4.10273 11.2395 4.1168 11.2078C4.13086 11.1867 4.16953 11.1762 4.21523 11.1937C4.26094 11.2184 4.28203 11.257 4.26797 11.2852Z"
+										fill="#F8F8F8"
+									/>
+								</g>
+								<defs>
+									<clipPath id="clip0_501_527">
+										<rect width="15.75" height="18" fill="white" />
+									</clipPath>
+								</defs>
+							</svg>
+							Github
+						</a>
+					</div>
+				</div>
+				<div class="section-rigth">
+					<img class="img-desktop" src="./images/img-fotter-desktop.png" />
+					<img class="img-mobil" src="./images/img-fotter-mobil.png" />
+				</div>
+			</div>
+			<label>Diseñado con ❤ por Palmex</label>
+		</div>
 
-        <div class="seventh-section-wrapper">
-          <div class="section-left">
-            <label class="lbl-title">&gt;&gt;Contactame_</label>
-            <div class="social-wrapper">
-              <a href="https://www.linkedin.com/in/luis-palma-c/" target="_blank" style="text-decoration: none;" class="lbl-social">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.75 2.1285C0.75 1.7629 0.895235 1.41227 1.15375 1.15376C1.41227 0.895236 1.7629 0.750002 2.1285 0.750002H15.87C16.0512 0.749706 16.2306 0.785149 16.3981 0.854302C16.5656 0.923455 16.7178 1.02496 16.8459 1.153C16.9741 1.28105 17.0758 1.43312 17.1451 1.60051C17.2145 1.7679 17.2501 1.94732 17.25 2.1285V15.87C17.2502 16.0512 17.2147 16.2307 17.1454 16.3982C17.0762 16.5656 16.9746 16.7178 16.8465 16.846C16.7184 16.9742 16.5663 17.0758 16.3989 17.1451C16.2314 17.2145 16.052 17.2501 15.8708 17.25H2.1285C1.94741 17.25 1.76809 17.2143 1.6008 17.145C1.4335 17.0757 1.2815 16.9741 1.15349 16.846C1.02547 16.7179 0.923949 16.5658 0.854717 16.3985C0.785485 16.2312 0.749902 16.0518 0.75 15.8707V2.1285ZM7.281 7.041H9.51525V8.163C9.83775 7.518 10.6628 6.9375 11.9025 6.9375C14.2793 6.9375 14.8425 8.22225 14.8425 10.5795V14.946H12.4373V11.1165C12.4373 9.774 12.1148 9.0165 11.2958 9.0165C10.1595 9.0165 9.687 9.83325 9.687 11.1165V14.946H7.281V7.041ZM3.156 14.8433H5.562V6.9375H3.156V14.8425V14.8433ZM5.90625 4.359C5.91079 4.56501 5.87413 4.76984 5.79843 4.96149C5.72273 5.15313 5.60951 5.32773 5.46542 5.47503C5.32133 5.62232 5.14927 5.73936 4.95934 5.81926C4.76941 5.89916 4.56543 5.94031 4.35938 5.94031C4.15332 5.94031 3.94934 5.89916 3.75941 5.81926C3.56948 5.73936 3.39742 5.62232 3.25333 5.47503C3.10924 5.32773 2.99602 5.15313 2.92032 4.96149C2.84462 4.76984 2.80796 4.56501 2.8125 4.359C2.8214 3.95464 2.98829 3.56984 3.27741 3.28702C3.56654 3.00419 3.95492 2.84581 4.35938 2.84581C4.76383 2.84581 5.15221 3.00419 5.44134 3.28702C5.73046 3.56984 5.89735 3.95464 5.90625 4.359Z" fill="#F8F8F8"/>
-                </svg>
-                Linkedin
-              </a>
-              <a href="https://www.facebook.com/luisito.palma" target="_blank" style="text-decoration: none;" class="lbl-social">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15.4688 1.96875H2.53125C2.22012 1.96875 1.96875 2.22012 1.96875 2.53125V15.4688C1.96875 15.7799 2.22012 16.0312 2.53125 16.0312H15.4688C15.7799 16.0312 16.0312 15.7799 16.0312 15.4688V2.53125C16.0312 2.22012 15.7799 1.96875 15.4688 1.96875ZM13.8445 6.07324H12.7213C11.8406 6.07324 11.6701 6.4916 11.6701 7.10684V8.46211H13.7725L13.4982 10.5838H11.6701V16.0312H9.47813V10.5855H7.64473V8.46211H9.47813V6.89766C9.47813 5.08184 10.5873 4.09219 12.208 4.09219C12.985 4.09219 13.6512 4.1502 13.8463 4.17656V6.07324H13.8445Z" fill="#F8F8F8"/>
-                </svg>
-                Facebook
-              </a>
-              <a href="https://www.github.com/PalmaLuis" target="_blank" style="text-decoration: none;" class="lbl-social">
-                <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_501_527)">
-                <path d="M14.0625 1.125H1.6875C0.755859 1.125 0 1.88086 0 2.8125V15.1875C0 16.1191 0.755859 16.875 1.6875 16.875H14.0625C14.9941 16.875 15.75 16.1191 15.75 15.1875V2.8125C15.75 1.88086 14.9941 1.125 14.0625 1.125ZM9.74883 14.6145C9.45352 14.6672 9.34453 14.4844 9.34453 14.3332C9.34453 14.1434 9.35156 13.173 9.35156 12.3891C9.35156 11.8406 9.16875 11.4926 8.9543 11.3098C10.2551 11.1656 11.6262 10.9863 11.6262 8.73984C11.6262 8.1 11.3977 7.78008 11.025 7.36875C11.0848 7.21758 11.2852 6.59531 10.9652 5.78672C10.4766 5.63555 9.35859 6.41602 9.35859 6.41602C8.89453 6.28594 8.3918 6.21914 7.89609 6.21914C7.40039 6.21914 6.89766 6.28594 6.43359 6.41602C6.43359 6.41602 5.31563 5.63555 4.82695 5.78672C4.50703 6.5918 4.70391 7.21406 4.76719 7.36875C4.39453 7.78008 4.21875 8.1 4.21875 8.73984C4.21875 10.9758 5.53008 11.1656 6.83086 11.3098C6.66211 11.4609 6.51094 11.7211 6.4582 12.0938C6.12422 12.2449 5.26992 12.5051 4.76016 11.6051C4.44023 11.0496 3.86367 11.0039 3.86367 11.0039C3.29414 10.9969 3.825 11.3625 3.825 11.3625C4.20469 11.5383 4.47187 12.2133 4.47187 12.2133C4.81289 13.2574 6.44414 12.9059 6.44414 12.9059C6.44414 13.3945 6.45117 14.1891 6.45117 14.3332C6.45117 14.4844 6.3457 14.6672 6.04688 14.6145C3.72656 13.8375 2.10234 11.6297 2.10234 9.04922C2.10234 5.82187 4.57031 3.37148 7.79766 3.37148C11.025 3.37148 13.6406 5.82187 13.6406 9.04922C13.6441 11.6297 12.0691 13.841 9.74883 14.6145ZM6.3 12.4664C6.2332 12.4805 6.16992 12.4523 6.16289 12.4066C6.15586 12.3539 6.20156 12.3082 6.26836 12.2941C6.33516 12.2871 6.39844 12.3152 6.40547 12.3609C6.41602 12.4066 6.37031 12.4523 6.3 12.4664ZM5.96602 12.4348C5.96602 12.4805 5.91328 12.5191 5.84297 12.5191C5.76562 12.5262 5.71289 12.4875 5.71289 12.4348C5.71289 12.3891 5.76562 12.3504 5.83594 12.3504C5.90273 12.3434 5.96602 12.382 5.96602 12.4348ZM5.48438 12.3961C5.47031 12.4418 5.4 12.4629 5.34023 12.4418C5.27344 12.4277 5.22773 12.375 5.2418 12.3293C5.25586 12.2836 5.32617 12.2625 5.38594 12.2766C5.45625 12.2977 5.50195 12.3504 5.48438 12.3961ZM5.05195 12.2063C5.02031 12.2449 4.95352 12.2379 4.90078 12.1852C4.84805 12.1395 4.83398 12.0727 4.86914 12.041C4.90078 12.0023 4.96758 12.0094 5.02031 12.0621C5.06602 12.1078 5.08359 12.1781 5.05195 12.2063ZM4.73203 11.8863C4.70039 11.9074 4.64062 11.8863 4.60195 11.8336C4.56328 11.7809 4.56328 11.7211 4.60195 11.6965C4.64062 11.6648 4.70039 11.6895 4.73203 11.7422C4.7707 11.7949 4.7707 11.8582 4.73203 11.8863ZM4.50352 11.5453C4.47188 11.577 4.41914 11.5594 4.38047 11.5242C4.3418 11.4785 4.33477 11.4258 4.36641 11.4012C4.39805 11.3695 4.45078 11.3871 4.48945 11.4223C4.52812 11.468 4.53516 11.5207 4.50352 11.5453ZM4.26797 11.2852C4.25391 11.3168 4.2082 11.3238 4.16953 11.2992C4.12383 11.2781 4.10273 11.2395 4.1168 11.2078C4.13086 11.1867 4.16953 11.1762 4.21523 11.1937C4.26094 11.2184 4.28203 11.257 4.26797 11.2852Z" fill="#F8F8F8"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_501_527">
-                <rect width="15.75" height="18" fill="white"/>
-                </clipPath>
-                </defs>
-                </svg>
-                Github
-              </a>
-            </div>
-          </div>
-          <div class="section-rigth">
-            <img class="img-desktop" src="./images/img-fotter-desktop.png">
-            <img class="img-mobil" src="./images/img-fotter-mobil.png">
-          </div>
-        </div>
-          <label >Diseñado con ❤ por Palmex</label>
-    </div>
-
-
-    <script src="./js/app.js"></script>
-  </body>
+		<script src="./js/app.js"></script>
+	</body>
 </html>

@@ -28,12 +28,7 @@ body {
   width: 90%;
   justify-content: space-between;
 }
-.img-desktop{
-  display:block;
-}
-.img-mobil{
-  display:none;
-}
+
 .img-desktop:hover{
   filter: drop-shadow(1px 1px 20px rgb(31, 175, 241));
 }
@@ -88,10 +83,8 @@ a{
     margin-top: 2rem;
   }
   .img-desktop{
-    display:none;
-  }
-  .img-mobil{
-    display:block;
+    width:250px;
+    height:auto;
   }
   .img-dektop:hover{
     filter: drop-shadow(1px 1px 20px rgb(31, 175, 241));

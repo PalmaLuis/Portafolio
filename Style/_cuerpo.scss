@@ -123,15 +123,11 @@
 				}
 			}
 		}
-
-		.second-section-rigth {
-			// border: 1px solid yellow ;
-			.img-mobil {
-				display: none;
-			}
-			.img-desktop {
-				display: block;
-			}
+	}
+	&.dark-active {
+		background-color: $dark-bg-seccion;
+		.second-section-wrapper {
+			background-color: $dark-bg-seccion;
 		}
 	}
 }
@@ -151,6 +147,11 @@
 
 			.lbl-title2 {
 				color: $bg-seccion;
+			}
+			&.dark-active {
+				label {
+					color: $dark-letras-nrml;
+				}
 			}
 		}
 		.hobbis-wrapper {
@@ -247,6 +248,11 @@
 				font-weight: 600;
 				margin-left: 3rem;
 			}
+			&.dark-active {
+				label {
+					color: $dark-letras-nrml;
+				}
+			}
 		}
 
 		.content-wrapper {
@@ -276,15 +282,6 @@
 					padding: 0.4rem 0.8rem;
 				}
 			}
-			.content-rigth {
-				// border: 1px solid yellow;
-				.img-desktop {
-					display: block;
-				}
-				.img-mobil {
-					display: none;
-				}
-			}
 		}
 	}
 }
@@ -301,6 +298,11 @@
 		font-size: 2.5rem;
 		.lbl-title {
 			color: $bg-seccion;
+		}
+		&.dark-active {
+			label {
+				color: $dark-letras-nrml;
+			}
 		}
 	}
 	.fifth-section {
@@ -331,14 +333,6 @@
 				padding: 0.4rem 0.8rem;
 			}
 		}
-		.section-left {
-			.img-desktop {
-				display: block;
-			}
-			.img-mobil {
-				display: none;
-			}
-		}
 	}
 }
 
@@ -355,6 +349,11 @@
 		font-size: 2.5rem;
 		.lbl-title {
 			color: $bg-seccion;
+		}
+		&.dark-active {
+			label {
+				color: $dark-letras-nrml;
+			}
 		}
 	}
 
@@ -532,14 +531,9 @@
 				}
 			}
 		}
-		.section-rigth {
-			.img-desktop {
-				display: block;
-			}
-			.img-mobil {
-				display: none;
-			}
-		}
+	}
+	&.dark-active {
+		background-color: $dark-bg-seccion;
 	}
 }
 

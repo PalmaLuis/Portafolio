@@ -18,6 +18,7 @@ navToggle.addEventListener('click', () => {
 let darkMode = 0;
 const icon_moon = document.getElementById('img-moon');
 const icon_sun = document.getElementById('img-sun');
+
 const cuerpo = document.getElementById('body');
 const header = document.getElementById('header');
 const links_nav = document.querySelectorAll('.nav-menu-link');
@@ -36,7 +37,7 @@ icon_moon.addEventListener('click', () => {
 	// para el cambio de icono darkmode
 	icon_moon.style.display = 'none';
 	icon_sun.style.display = 'inline-block';
-
+	console.log("yo sigo  funcionando cholo")
 	// cambios que se haran en la pagina
 	cuerpo.classList.add('dark-active');
 	header.classList.add('dark-active');

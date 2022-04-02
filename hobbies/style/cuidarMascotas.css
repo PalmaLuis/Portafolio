@@ -1,0 +1,142 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f8f9fa;
+	height: 100vh;
+	width: 100vw;
+	/* padding: 90px 0; */
+	font-family: 'Poppins', sans-serif;
+	overflow-y: inherit;
+	overflow-x: hidden;
+}
+.body .dark-active {
+	background-color: #00172e;
+}
+
+.header {
+	background-color: #e9eff5;
+	position: fixed;
+	width: 100vw;
+}
+.nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+ul {
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 2rem;
+	list-style: none;
+	gap: 1rem;
+}
+
+ul > li {
+	color: #0466c8;
+	font-weight: 700;
+	font-size: 24px;
+}
+
+.img-moon {
+	padding-top: 0.5rem;
+	position: relative;
+	left: 0px;
+	/* // display:none; */
+	display: inline-block;
+	cursor: pointer;
+}
+.img-sun {
+	display: none;
+	/* display:inline-block; */
+	position: relative;
+	cursor: pointer;
+	left: -20px;
+	padding-top: 0.5rem;
+}
+
+.section {
+	padding-top: 150px;
+	display: flex;
+	justify-content: center;
+}
+.section-kitty {
+	display: flex;
+	justify-content: center;
+}
+
+.section-mufasa {
+	padding-top: 80px;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 40px;
+}
+
+.section-enanin {
+	padding-top: 80px;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 40px;
+}
+.rocky-wrapper {
+	width: 80%;
+	display: flex;
+	gap: 2rem;
+}
+.desc {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+}
+
+.desc__label {
+	font-weight: 700;
+	font-size: 32px;
+}
+
+.desc__p {
+	font-size: 24px;
+	width: 80%;
+	padding-top: 5rem;
+}
+
+.section-special {
+	color: white;
+	background-color: #0466c8;
+}
+
+@media (max-width: 768px) {
+	section {
+		justify-content: center;
+	}
+	.section-rocky{
+		padding-bottom: 2rem;
+	}
+	.rocky-wrapper {
+		flex-direction: column;
+		justify-content: center;
+		width: 90%;
+	}
+	.img {
+		width: 100%;
+		height: auto;
+	}
+	.section-kitty>.rocky-wrapper{
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.desc__label {
+	font-weight: 700;
+	font-size: 24px;
+}
+
+.desc__p {
+	font-size: 18px;
+	width: 80%;
+	padding-top: 2rem;
+}
+
+
+}

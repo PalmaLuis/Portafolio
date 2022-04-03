@@ -33,6 +33,9 @@ const fifthSection = document.getElementById('lbl-fifth')
 const sixSection = document.getElementById('lbl-six')
 
 
+
+
+
 icon_moon.addEventListener('click', () => {
 	// para el cambio de icono darkmode
 	icon_moon.style.display = 'none';

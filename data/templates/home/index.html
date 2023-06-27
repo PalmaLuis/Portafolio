@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Luis Palma: Fusionando diseño y funcionalidad en el desarrollo web como Desarrollador Frontend y Diseñador UI</title>
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="../../static/css/home.css">
+{% endblock %}
+
+{% block seo %}
+    <meta name="description" content="Desarrollador frontend y diseñador UI especializado en crear experiencias web atractivas y funcionales,
+    transformando ideas en interfaces impactantes y fluidas.">
+    <meta name="language" content="Spanish - LATAM">
+    <meta name="type" content="Page">
+    <meta name="content_format" content="Web Pages">
+    <meta name="robots" content="index">
+{% endblock %}
+
+{% block body %}
+
+    <section class="container">
+        <nav class="navbar">
+            <div class="cont-logo"><img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Logo Luis Palma"></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">About me</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>  
+{% endblock %}

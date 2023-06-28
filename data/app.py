@@ -5,7 +5,8 @@ import http.client, os
 load_dotenv()
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = os.getenv('KEY-SECRET')
+# app.config['SECRET_KEY'] = os.getenv('KEY-SECRET')
+app.config['SECRET_KEY'] = "supersecreto"
 
 @app.route('/')
 def home():
@@ -20,4 +21,4 @@ def internal_error(error):
     return render_template('error_page/500.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='5000', debug=True)
+    app.run()
